@@ -1,0 +1,14 @@
+{"info":{"name":"AutoCare Pro","schema":"https://schema.getpostman.com/json/collection/v2.1.0/collection.json"},
+"variable":[{"key":"base","value":"http://localhost:5000/api"},{"key":"token","value":""}],
+"item":[
+{"name":"Health","request":{"method":"GET","url":"{{base}}/health"}},
+{"name":"Register","request":{"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"url":"{{base}}/auth/register","body":{"mode":"raw","raw":"{\"fullName\":\"Test User\",\"email\":\"test@example.com\",\"phone\":\"9876543210\",\"password\":\"Str0ng!Pass\",\"confirmPassword\":\"Str0ng!Pass\",\"acceptTerms\":true}"}}},
+{"name":"Login (saves token)","event":[{"listen":"test","script":{"exec":["pm.collectionVariables.set('token', pm.response.json().data.accessToken)"]}}],"request":{"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"url":"{{base}}/auth/login","body":{"mode":"raw","raw":"{\"email\":\"test@example.com\",\"password\":\"Str0ng!Pass\"}"}}},
+{"name":"Me","request":{"method":"GET","header":[{"key":"Authorization","value":"Bearer {{token}}"}],"url":"{{base}}/auth/me"}},
+{"name":"Services","request":{"method":"GET","url":"{{base}}/services?category=Brake%20Services"}},
+{"name":"Add vehicle","request":{"method":"POST","header":[{"key":"Authorization","value":"Bearer {{token}}"},{"key":"Content-Type","value":"application/json"}],"url":"{{base}}/vehicles","body":{"mode":"raw","raw":"{\"type\":\"car\",\"brand\":\"Maruti\",\"model\":\"Swift\",\"registrationNumber\":\"TS09EA1234\",\"year\":2021,\"fuelType\":\"petrol\",\"odometer\":20000}"}}},
+{"name":"Availability","request":{"method":"GET","url":"{{base}}/workshops/ws_main/availability?date=2026-11-02"}},
+{"name":"Book (replace vehicleId)","request":{"method":"POST","header":[{"key":"Authorization","value":"Bearer {{token}}"},{"key":"Content-Type","value":"application/json"}],"url":"{{base}}/appointments","body":{"mode":"raw","raw":"{\"vehicleId\":\"veh_...\",\"serviceIds\":[\"svc_001\"],\"workshopId\":\"ws_main\",\"date\":\"2026-11-02\",\"time\":\"10:00\",\"acceptPolicy\":true}"}}},
+{"name":"Forbidden: customer on admin dashboard (expect 403)","request":{"method":"GET","header":[{"key":"Authorization","value":"Bearer {{token}}"}],"url":"{{base}}/dashboard/admin"}},
+{"name":"Invalid body (expect 422)","request":{"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"url":"{{base}}/auth/register","body":{"mode":"raw","raw":"{\"email\":\"bad\"}"}}}
+]}

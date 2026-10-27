@@ -1,0 +1,225 @@
+<div class="page-header">
+  <div><h1>Book an appointment</h1><p>Seven quick steps. Your booking is only confirmed after the workshop reviews it.</p></div>
+</div>
+
+@if (loading()) {
+  <app-spinner label="Preparing booking…" />
+} @else if (loadError()) {
+  <div class="alert alert-danger">{{ loadError() }}</div>
+} @else {
+  <ol class="stepper" aria-label="Booking steps">
+    @for (s of steps; track s; let i = $index) {
+      <li [class.done]="i < step()" [class.current]="i === step()">
+        <button type="button" (click)="goTo(i)" [attr.aria-current]="i === step() ? 'step' : null"><span class="n">{{ i < step() ? '✓' : i + 1 }}</span><span class="t">{{ s }}</span></button>
+      </li>
+    }
+  </ol>
+
+  <div class="layout">
+    <div class="card main" [formGroup]="form">
+      <!-- STEP 1: VEHICLE -->
+      @if (step() === 0) {
+        <h2>1. Select your vehicle</h2>
+        @if (vehicles().length === 0) {
+          <app-empty-state icon="car" title="No vehicles registered" message="Add a vehicle to continue with your booking.">
+            <a class="btn btn-primary" routerLink="/customer/vehicles/new" [queryParams]="{ returnTo: 'book' }">Add a vehicle</a>
+          </app-empty-state>
+        } @else {
+          <div class="options" role="radiogroup" aria-label="Vehicle">
+            @for (v of vehicles(); track v.id) {
+              <button type="button" class="opt" role="radio" [attr.aria-checked]="selectedVehicleId() === v.id" [class.sel]="selectedVehicleId() === v.id" (click)="selectVehicle(v.id)">
+                <app-icon [name]="v.type === 'motorcycle' ? 'gauge' : v.type === 'van' || v.type === 'lcv' ? 'truck' : 'car'" [size]="24" />
+                <span><b>{{ v.brand }} {{ v.model }}</b><span class="mono small">{{ v.registrationNumber }}</span><span class="small muted">{{ v.type | vehicleType }} · {{ v.fuelType }} · {{ v.year }}</span></span>
+              </button>
+            }
+          </div>
+          <a class="btn btn-outline btn-sm mt-2" routerLink="/customer/vehicles/new" [queryParams]="{ returnTo: 'book' }"><app-icon name="plus" [size]="16" /> Add a new vehicle</a>
+        }
+      }
+
+      <!-- STEP 2: SERVICES -->
+      @if (step() === 1) {
+        <h2>2. Choose services</h2>
+        <p class="muted small">Showing services available for your {{ selectedVehicle()?.type | vehicleType }}. Prices are sample estimates (excl. GST) adjusted for vehicle typestimate().</p>
+        <div class="toolbar">
+          <input class="input grow" type="search" placeholder="Search services" aria-label="Search services" [ngModel]="serviceSearch()" (ngModelChange)="serviceSearch.set($event)" [ngModelOptions]="{ standalone: true }" />
+          <select class="select" aria-label="Category" [ngModel]="serviceCategory()" (ngModelChange)="serviceCategory.set($event)" [ngModelOptions]="{ standalone: true }">
+            <option value="">All categories</option>
+            @for (c of categories(); track c) { <option [value]="c">{{ c }}</option> }
+          </select>
+        </div>
+        <div class="svc-list">
+          @for (s of compatibleServices(); track s.id) {
+            <label class="svc" [class.sel]="selectedServiceIds().includes(s.id)">
+              <input type="checkbox" [checked]="selectedServiceIds().includes(s.id)" (change)="toggleService(s.id)" />
+              <span class="grow">
+                <b>{{ s.name }}</b>
+                <span class="small muted">{{ s.category }} · ~{{ s.durationMinutes | duration }}</span>
+                @if (s.bookingMode !== 'direct') { <span class="badge" [class.badge-info]="s.bookingMode === 'inspection'" [class.badge-warning]="s.bookingMode === 'request'">{{ s.bookingMode | bookingMode }}</span> }
+              </span>
+              <span class="price">{{ s.priceFrom > 0 ? (priceFor(s) | inr) : 'On enquiry' }}</span>
+            </label>
+          } @empty { <p class="muted">No services match.</p> }
+        </div>
+      }
+
+      <!-- STEP 3: WORKSHOP -->
+      @if (step() === 2) {
+        <h2>3. Select a workshop</h2>
+        <div class="options" role="radiogroup" aria-label="Workshop">
+          @for (w of workshops(); track w.id) {
+            <button type="button" class="opt" role="radio" [attr.aria-checked]="form.controls.workshopId.value === w.id" [class.sel]="form.controls.workshopId.value === w.id" (click)="selectWorkshop(w.id)">
+              <app-icon name="building" [size]="24" />
+              <span><b>{{ w.name }}</b><span class="small muted">{{ w.address }}</span><span class="small muted">Mon {{ w.hours['mon']?.open || 'closed' }}–{{ w.hours['mon']?.close || '' }} · Sun {{ w.hours['sun'] ? w.hours['sun']?.open + '–' + w.hours['sun']?.close : 'closed' }}</span></span>
+            </button>
+          } @empty { <p class="muted">No workshops are currently accepting bookings.</p> }
+        </div>
+      }
+
+      <!-- STEP 4: DATE & TIME -->
+      @if (step() === 3) {
+        <h2>4. Pick a date and time</h2>
+        <div class="dates" role="listbox" aria-label="Date">
+          @for (d of dateChips(); track d.date) {
+            <button type="button" class="date" role="option" [attr.aria-selected]="form.controls.datestimate().value === d.date" [class.sel]="form.controls.datestimate().value === d.date" (click)="pickDate(d.date)">
+              <span class="small">{{ d.day }}</span><b>{{ d.num }}</b><span class="small">{{ d.month }}</span>
+            </button>
+          }
+        </div>
+        <div class="field mt-2" style="max-width:240px">
+          <label for="b-date">Or choose another date</label>
+          <input id="b-date" type="date" class="input" [min]="today" [max]="maxDate()" [value]="form.controls.datestimate().value" (change)="pickDate($any($event.target).value)" />
+        </div>
+        @if (slotsLoading()) {
+          <app-spinner label="Checking availability…" />
+        } @else if (availability()) {
+          @if (availability().closed) {
+            <div class="alert alert-warning mt-2">{{ availability().reason }}. Please choose another datestimate().</div>
+          } @else {
+            <h3 class="mt-3">Available times on {{ availability().date | day }} <span class="muted small">({{ availability().open }}–{{ availability().close }})</span></h3>
+            <div class="slots">
+              @for (s of availability().slots; track s.time) {
+                <button type="button" class="slot" [class.sel]="form.controls.timestimate().value === s.time" [disabled]="!s.available" (click)="pickTime(s.time)" [attr.aria-pressed]="form.controls.timestimate().value === s.time">
+                  {{ s.time }}<span class="small">{{ s.available ? s.remaining + ' left' : s.reason === 'past' ? 'Unavailable' : 'Full' }}</span>
+                </button>
+              }
+            </div>
+            <p class="small muted mt-1">Availability is re-checked when you confirm.</p>
+          }
+        } @else {
+          <p class="muted mt-2">Select a date to see available time slots.</p>
+        }
+      }
+
+      <!-- STEP 5: PROBLEM -->
+      @if (step() === 4) {
+        <h2>5. Describe the problem <span class="muted small">(optional)</span></h2>
+        <div class="field">
+          <label for="b-cat">Problem category</label>
+          <select id="b-cat" class="select" formControlName="problemCategory">
+            <option value="">Not applicable / routine service</option>
+            @for (c of settings()?.problemCategories ?? []; track c) { <option [value]="c">{{ c }}</option> }
+          </select>
+        </div>
+        <div class="field mt-2">
+          <label for="b-desc">Description</label>
+          <textarea id="b-desc" class="textarea" rows="5" formControlName="problemDescription" placeholder="E.g. squeaking noise when braking, AC not cooling, warning light on dashboard…"></textarea>
+          <span class="hint">{{ form.controls.problemDescription.valuestimate().length }}/1000</span>
+          <app-field-error [control]="form.controls.problemDescription" label="Description" />
+        </div>
+      }
+
+      <!-- STEP 6: PICKUP -->
+      @if (step() === 5) {
+        <h2>6. Pickup &amp; drop-off</h2>
+        <div class="alert alert-info mb-2"><app-icon name="info" [size]="18" /> <span>Pickup and drop-off are <b>requests</b>, subject to availability and confirmation by the workshop. Charges may apply.</span></div>
+        <div formGroupName="pickup" class="stack">
+          <label class="checkbox"><input type="checkbox" formControlName="pickupRequested" /> Request pickup from my address</label>
+          <label class="checkbox"><input type="checkbox" formControlName="dropRequested" /> Request drop-off after the service</label>
+          @if (form.controls.pickup.controls.pickupRequested.value || form.controls.pickup.controls.dropRequested.value) {
+            <div class="form-grid">
+              <div class="field full"><label for="b-addr">Pickup / drop-off address <span class="req">*</span></label><textarea id="b-addr" class="textarea" rows="3" formControlName="address"></textarea>
+                @if (form.controls.pickup.controls.address.valuestimate().trim().length < 10) { <span class="hint">Enter the complete address (at least 10 characters).</span> }</div>
+              <div class="field"><label for="b-phone">Contact phone <span class="req">*</span></label><input id="b-phone" class="input" formControlName="contactPhone" /><app-field-error [control]="form.controls.pickup.controls.contactPhone" label="Phone" /></div>
+            </div>
+          } @else {
+            <p class="muted small">Not required? Just continue - you'll bring the vehicle to the workshop.</p>
+          }
+        </div>
+      }
+
+      <!-- STEP 7: REVIEW -->
+      @if (step() === 6) {
+        <h2>7. Review and confirm</h2>
+        <div class="review-grid">
+          <div><h4>Customer</h4><p class="small">{{ auth.user()?.fullName }}<br />{{ auth.user()?.email }}<br />{{ auth.user()?.phone }}</p></div>
+          <div><h4>Vehicle</h4><p class="small">{{ selectedVehicle()?.brand }} {{ selectedVehicle()?.model }}<br /><span class="mono">{{ selectedVehicle()?.registrationNumber }}</span></p></div>
+          <div><h4>Workshop</h4><p class="small">{{ selectedWorkshop()?.name }}<br />{{ selectedWorkshop()?.address }}</p></div>
+          <div><h4>Date &amp; time</h4><p class="small">{{ form.controls.datestimate().value | day }} at {{ form.controls.timestimate().value }}</p></div>
+          <div><h4>Pickup / drop-off</h4><p class="small">@if (form.controls.pickup.controls.pickupRequested.value || form.controls.pickup.controls.dropRequested.value) { Requested: {{ form.controls.pickup.controls.pickupRequested.value ? 'pickup' : '' }} {{ form.controls.pickup.controls.dropRequested.value ? 'drop-off' : '' }} (subject to confirmation) } @else { Not requested }</p></div>
+          <div><h4>Problem</h4><p class="small">{{ form.controls.problemCategory.value || 'Routine' }}@if (form.controls.problemDescription.value) { - {{ form.controls.problemDescription.value }} }</p></div>
+        </div>
+
+        <h4 class="mt-2">Services &amp; estimate</h4>
+        @if (estimating()) {
+          <app-spinner label="Calculating estimate…" />
+        } @else if (estimate()) {
+          <div class="table-wrap">
+            <table class="table">
+              <thead><tr><th>Service</th><th>Duration</th><th class="text-right">Estimate</th></tr></thead>
+              <tbody>
+                @for (i of estimate().items; track i.serviceId) {
+                  <tr><td>{{ i.name }} @if (i.bookingMode !== 'direct') { <span class="badge badge-info">{{ i.bookingMode === 'inspection' ? 'after inspection' : 'request' }}</span> }</td><td>{{ i.durationMinutes | duration }}</td><td class="text-right">{{ i.price | inr }}</td></tr>
+                }
+                <tr><td colspan="2" class="text-right">Subtotal</td><td class="text-right">{{ estimate().subtotal | inr }}</td></tr>
+                @if (estimate().discount > 0) { <tr><td colspan="2" class="text-right text-success">{{ estimate().offer ? 'Offer ' + estimate().offer.code : estimate().packageApplied?.title }}</td><td class="text-right text-success">− {{ estimate().discount | inr }}</td></tr> }
+                <tr><td colspan="2" class="text-right">GST ({{ estimate().taxPercent }}%)</td><td class="text-right">{{ estimate().tax | inr }}</td></tr>
+                <tr class="total"><td colspan="2" class="text-right"><b>Estimated total</b></td><td class="text-right"><b>{{ estimate().total | inr }}</b></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="small muted mt-1">Estimated duration: {{ estimate().estimatedDurationMinutes | duration }}. {{ estimate().note }}</p>
+          @if (estimate().requiresInspection) { <div class="alert alert-info small">Some services need inspection first. You will approve the final estimate before work starts.</div> }
+        }
+        @if (estimateError()) { <div class="alert alert-warning small mt-1">{{ estimateError() }}</div> }
+
+        <div class="flex mt-2" style="max-width:420px">
+          <input class="input" formControlName="offerCode" placeholder="Offer code (optional)" aria-label="Offer code" />
+          <button type="button" class="btn btn-outline" (click)="runEstimate()">Apply</button>
+        </div>
+
+        <div class="policy mt-3">
+          <h4>Terms &amp; cancellation policy</h4>
+          <p class="small">{{ settings()?.booking?.cancellationPolicy }}</p>
+          <label class="checkbox"><input type="checkbox" formControlName="acceptPolicy" /> I have read and accept the terms and cancellation policy. <span class="req">*</span></label>
+          <app-field-error [control]="form.controls.acceptPolicy" label="Policy" />
+        </div>
+        @if (submitError()) { <div class="alert alert-danger mt-2" role="alert">{{ submitError() }}</div> }
+      }
+
+      <div class="nav">
+        <button type="button" class="btn btn-outline" (click)="back()" [disabled]="step() === 0 || submitting()">Back</button>
+        @if (step() < steps.length - 1) {
+          <button type="button" class="btn btn-primary" (click)="next()" [disabled]="step() === 0 && vehicles().length === 0">Continue <app-icon name="arrowRight" [size]="16" /></button>
+        } @else {
+          <button type="button" class="btn btn-primary btn-lg" (click)="confirm()" [disabled]="submitting() || estimating()">{{ submitting() ? 'Submitting booking…' : 'Confirm booking' }}</button>
+        }
+      </div>
+    </div>
+
+    <aside class="card summary">
+      <h3>Your booking</h3>
+      <dl class="sum">
+        <dt>Vehicle</dt><dd>{{ selectedVehicle() ? selectedVehicle()?.brand + ' ' + selectedVehicle()?.model : '—' }}</dd>
+        <dt>Services</dt><dd>{{ selectedServiceIds().length ? selectedServiceIds().length + ' selected' : '—' }}</dd>
+        <dt>Workshop</dt><dd>{{ selectedWorkshop()?.name || '—' }}</dd>
+        <dt>When</dt><dd>{{ form.controls.datestimate().value ? (form.controls.datestimate().value | day) : '—' }} {{ form.controls.timestimate().value }}</dd>
+      </dl>
+      @if (selectedServices().length) {
+        <ul class="mini">@for (s of selectedServices(); track s.id) { <li><span>{{ s.name }}</span><button type="button" aria-label="Remove service" (click)="toggleService(s.id)">×</button></li> }</ul>
+        <div class="tot"><span>Estimate (excl. GST)</span><b>{{ (estimate()?.subtotal ?? selectedTotal()) | inr }}</b></div>
+        <div class="small muted">~{{ selectedDuration() | duration }} of work</div>
+      }
+    </aside>
+  </div>
+}

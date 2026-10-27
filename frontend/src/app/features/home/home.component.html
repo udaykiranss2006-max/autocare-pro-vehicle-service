@@ -1,0 +1,216 @@
+<!-- HERO -->
+<section class="hero">
+  <img class="hero-img" src="assets/images/hero-workshop.jpg" alt="Technician inspecting a car on a lift in a modern AutoCare Pro workshop" />
+  <div class="hero-shade"></div>
+  <div class="container hero-inner">
+    <span class="eyebrow">Vehicle service management</span>
+    <h1>Reliable Vehicle Care, <span class="text-accent">Made Simple.</span></h1>
+    <p class="lead">AutoCare Pro brings maintenance, repairs and diagnostics together in one place. Book online in minutes, track every step of the work and keep your full service history safe.</p>
+    <div class="flex flex-wrap">
+      <a routerLink="/customer/book" class="btn btn-primary btn-lg"><app-icon name="calendar" /> Book an Appointment</a>
+      <a routerLink="/services" class="btn btn-outline-light btn-lg">Explore Services <app-icon name="arrowRight" /></a>
+    </div>
+    <ul class="hero-points">
+      <li><app-icon name="check" [size]="16" /> Cars, bikes, SUVs, vans &amp; LCVs</li>
+      <li><app-icon name="check" [size]="16" /> Transparent sample estimates</li>
+      <li><app-icon name="check" [size]="16" /> Live status updates</li>
+    </ul>
+  </div>
+</section>
+
+<!-- TRUST STRIP (computed from live data) -->
+<section class="trust">
+  <div class="container trust-grid">
+    <div><b>{{ serviceCount() || '—' }}</b><span>services in our catalog</span></div>
+    <div><b>{{ categoryCount() || '—' }}</b><span>service categories</span></div>
+    <div><b>{{ workshops().length || '—' }}</b><span>workshop locations</span></div>
+    <div>
+      <b>{{ avgRating() ?? 'New' }}@if (avgRating()) {<small>/5</small>}</b>
+      <span>{{ reviewCount() ? 'from ' + reviewCount() + ' verified reviews' : 'reviews coming soon' }}</span>
+    </div>
+  </div>
+</section>
+
+@if (loadError()) {
+  <div class="container mt-2"><div class="alert alert-warning">Some live content could not be loaded. Please check that the AutoCare Pro server is running.</div></div>
+}
+
+<!-- POPULAR SERVICES -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Popular services</span>
+      <h2>What our customers book most</h2>
+      <p class="muted">Clear starting prices and durations. Final costs are confirmed after inspection.</p>
+    </div>
+    @if (loading()) {
+      <app-spinner label="Loading services…" />
+    } @else {
+      <div class="grid grid-3">
+        @for (s of popular(); track s.id) { <app-service-card [service]="s" /> }
+      </div>
+      <div class="text-center mt-3"><a routerLink="/services" class="btn btn-outline">View all services <app-icon name="arrowRight" [size]="16" /></a></div>
+    }
+  </div>
+</section>
+
+<!-- WHY CHOOSE -->
+<section class="section why">
+  <div class="container why-grid">
+    <div class="why-img">
+      <img src="assets/images/about-technician.jpg" alt="AutoCare Pro technician running computerised diagnostics on an SUV" loading="lazy" />
+    </div>
+    <div>
+      <span class="eyebrow">Why choose AutoCare Pro</span>
+      <h2>Workshop expertise with a digital front desk</h2>
+      <p class="muted">We combine trained technicians and structured workflows with a simple online experience, so you always know what is happening with your vehicle.</p>
+      <div class="grid grid-2 mt-3">
+        @for (w of why; track w.title) {
+          <div class="why-item">
+            <span class="why-ic"><app-icon [name]="w.icon" [size]="20" /></span>
+            <div><h4>{{ w.title }}</h4><p class="muted small mb-0">{{ w.text }}</p></div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section section-dark how">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">How it works</span>
+      <h2>From booking to pickup in four steps</h2>
+    </div>
+    <ol class="steps">
+      @for (s of steps; track s.title; let i = $index) {
+        <li>
+          <span class="step-n">{{ i + 1 }}</span>
+          <span class="step-ic"><app-icon [name]="s.icon" [size]="22" /></span>
+          <h3>{{ s.title }}</h3>
+          <p>{{ s.text }}</p>
+        </li>
+      }
+    </ol>
+  </div>
+</section>
+
+<!-- OFFERS & PACKAGES -->
+@if (offers().length) {
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Packages &amp; offers</span>
+        <h2>Save on bundled care</h2>
+        <p class="muted">Sample offers configured by the workshop. Discounts are applied automatically in your estimate.</p>
+      </div>
+      <div class="grid grid-auto">
+        @for (o of offers(); track o.id) {
+          <article class="card offer" [class.pkg]="o.kind === 'package'">
+            <span class="badge" [class.badge-accent]="o.kind === 'offer'" [class.badge-info]="o.kind === 'package'">{{ o.kind === 'package' ? 'Package' : 'Offer' }}</span>
+            <h3 class="mt-1">{{ o.title }}</h3>
+            <p class="muted small">{{ o.description }}</p>
+            <div class="offer-foot">
+              @if (o.kind === 'package' && o.packagePrice) {
+                <div><span class="muted small">Package price from</span><b class="big">{{ o.packagePrice | inr }}</b></div>
+              } @else {
+                <div><b class="big">{{ o.discountPercent }}% off</b>@if (o.code) {<span class="code">Code: {{ o.code }}</span>}</div>
+              }
+              <a class="btn btn-dark btn-sm" routerLink="/customer/book" [queryParams]="{ services: packageLink(o), offer: o.code || null }">Book</a>
+            </div>
+            @if (o.validUntil) { <span class="muted small">Valid until {{ o.validUntil | day }}</span> }
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+}
+
+<!-- REVIEWS -->
+<section class="section reviews-sec">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Customer reviews</span>
+      <h2>What customers say</h2>
+      <p class="muted">Only reviews from completed services, approved by our team, are shown here.</p>
+    </div>
+    @if (reviews().length === 0) {
+      <div class="card text-center muted">No published reviews yet. Reviews appear here after customers complete a service and our team approves them.</div>
+    } @else {
+      <div class="grid grid-3">
+        @for (r of reviews(); track r.id) {
+          <figure class="card review">
+            <app-stars [value]="r.rating" />
+            <blockquote>“{{ r.comment }}”</blockquote>
+            <figcaption><b>{{ r.customerDisplayName }}</b><span class="muted small">{{ r.serviceNames.join(', ') }} · {{ r.createdAt | day }}</span></figcaption>
+            @if (r.adminResponse) { <p class="reply small"><b>AutoCare Pro:</b> {{ r.adminResponse }}</p> }
+          </figure>
+        }
+      </div>
+    }
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="container faq-wrap">
+    <div>
+      <span class="eyebrow">FAQ</span>
+      <h2>Frequently asked questions</h2>
+      <p class="muted">Can't find what you need? <a routerLink="/contact">Contact our team.</a></p>
+    </div>
+    <div class="faq">
+      @for (f of faqs; track f.q; let i = $index) {
+        <div class="faq-item" [class.open]="openFaq() === i">
+          <button type="button" [attr.aria-expanded]="openFaq() === i" [attr.aria-controls]="'faq-' + i" (click)="toggleFaq(i)">
+            <span>{{ f.q }}</span><app-icon [name]="openFaq() === i ? 'x' : 'plus'" [size]="18" />
+          </button>
+          @if (openFaq() === i) { <p [id]="'faq-' + i">{{ f.a }}</p> }
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT / LOCATIONS -->
+<section class="section section-dark">
+  <div class="container contact-grid">
+    <div>
+      <span class="eyebrow">Visit us</span>
+      <h2>Workshops &amp; contact</h2>
+      @if (settings(); as s) {
+        <p class="ci"><app-icon name="phone" [size]="18" /> {{ s.business.phone }}</p>
+        <p class="ci"><app-icon name="mail" [size]="18" /> {{ s.business.email }}</p>
+        <p class="ci"><app-icon name="pin" [size]="18" /> {{ s.business.address }}</p>
+        @if (s.business.isSampleData) { <p class="small sample">These are clearly marked sample details. The administrator can edit them in Business Settings.</p> }
+      }
+      <a routerLink="/contact" class="btn btn-primary mt-2">Send us a message</a>
+    </div>
+    <div class="ws-list">
+      @for (w of workshops(); track w.id) {
+        <div class="ws">
+          <h3>{{ w.name }}</h3>
+          <p class="small"><app-icon name="pin" [size]="14" /> {{ w.address }}</p>
+          <p class="small"><app-icon name="clock" [size]="14" /> Mon–Sat {{ w.hours['mon']?.open || 'Closed' }}–{{ w.hours['mon']?.close || '' }} · Sun {{ w.hours['sun'] ? w.hours['sun']?.open + '–' + w.hours['sun']?.close : 'Closed' }}</p>
+        </div>
+      } @empty {
+        <p class="muted">Workshop information will appear here once configured.</p>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="container cta-inner">
+    <div>
+      <h2>Ready for your next service?</h2>
+      <p>Create a free account, add your vehicle and pick a slot that suits you.</p>
+    </div>
+    <div class="flex flex-wrap">
+      <a routerLink="/register" class="btn btn-dark btn-lg">Create account</a>
+      <a routerLink="/customer/book" class="btn btn-outline btn-lg">Book now</a>
+    </div>
+  </div>
+</section>

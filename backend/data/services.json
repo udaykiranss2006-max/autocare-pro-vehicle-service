@@ -1,0 +1,2906 @@
+[
+  {
+    "id": "svc_001",
+    "slug": "periodic-maintenance-service",
+    "name": "Periodic Maintenance Service",
+    "category": "General Maintenance",
+    "description": "Scheduled service covering the essential checks, fluids and filters your vehicle needs at regular intervals.",
+    "icon": "wrench",
+    "priceFrom": 3499,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 180,
+    "benefits": [
+      "Longer engine life",
+      "Better fuel efficiency",
+      "Fewer unexpected breakdowns"
+    ],
+    "inclusions": [
+      "Engine oil and filter change",
+      "Air filter cleaning",
+      "30-point inspection",
+      "Fluid top-ups",
+      "Washing"
+    ],
+    "exclusions": [
+      "Replacement of worn parts beyond the listed items (quoted separately)",
+      "Repairs discovered during inspection"
+    ],
+    "vehicleTypes": [
+      "car",
+      "motorcycle",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "direct",
+    "available": true,
+    "popular": true,
+    "faqs": [
+      {
+        "q": "Is the price fixed?",
+        "a": "The price shown is a sample starting estimate. Any extra work or parts found necessary are quoted and done only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 3 hour(s), depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_002",
+    "slug": "general-inspection",
+    "name": "General Inspection",
+    "category": "General Maintenance",
+    "description": "A quick but thorough visual and functional inspection to spot developing problems early.",
+    "icon": "wrench",
+    "priceFrom": 499,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 45,
+    "benefits": [
+      "Longer engine life",
+      "Better fuel efficiency",
+      "Fewer unexpected breakdowns"
+    ],
+    "inclusions": [
+      "Visual inspection of engine bay",
+      "Brake and tyre check",
+      "Lights and horn check",
+      "Inspection report"
+    ],
+    "exclusions": [
+      "Replacement of worn parts beyond the listed items (quoted separately)",
+      "Repairs discovered during inspection"
+    ],
+    "vehicleTypes": [
+      "car",
+      "motorcycle",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "direct",
+    "available": true,
+    "popular": false,
+    "faqs": [
+      {
+        "q": "Is the price fixed?",
+        "a": "The price shown is a sample starting estimate. Any extra work or parts found necessary are quoted and done only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 45 minutes, depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_003",
+    "slug": "engine-oil-and-oil-filter-change",
+    "name": "Engine Oil and Oil Filter Change",
+    "category": "General Maintenance",
+    "description": "Drain old oil and refill with the grade recommended for your engine, with a new oil filter.",
+    "icon": "wrench",
+    "priceFrom": 1999,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 60,
+    "benefits": [
+      "Longer engine life",
+      "Better fuel efficiency",
+      "Fewer unexpected breakdowns"
+    ],
+    "inclusions": [
+      "Engine oil drain and refill",
+      "New oil filter",
+      "Drain plug washer",
+      "Oil level check"
+    ],
+    "exclusions": [
+      "Replacement of worn parts beyond the listed items (quoted separately)",
+      "Repairs discovered during inspection"
+    ],
+    "vehicleTypes": [
+      "car",
+      "motorcycle",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "direct",
+    "available": true,
+    "popular": true,
+    "faqs": [
+      {
+        "q": "Is the price fixed?",
+        "a": "The price shown is a sample starting estimate. Any extra work or parts found necessary are quoted and done only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 1 hour(s), depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_004",
+    "slug": "air-filter-replacement",
+    "name": "Air Filter Replacement",
+    "category": "General Maintenance",
+    "description": "Replace a clogged engine air filter to restore airflow, performance and mileage.",
+    "icon": "wrench",
+    "priceFrom": 699,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 30,
+    "benefits": [
+      "Longer engine life",
+      "Better fuel efficiency",
+      "Fewer unexpected breakdowns"
+    ],
+    "inclusions": [
+      "Air box cleaning",
+      "New air filter fitment",
+      "Intake inspection"
+    ],
+    "exclusions": [
+      "Replacement of worn parts beyond the listed items (quoted separately)",
+      "Repairs discovered during inspection"
+    ],
+    "vehicleTypes": [
+      "car",
+      "motorcycle",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "direct",
+    "available": true,
+    "popular": false,
+    "faqs": [
+      {
+        "q": "Is the price fixed?",
+        "a": "The price shown is a sample starting estimate. Any extra work or parts found necessary are quoted and done only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 30 minutes, depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_005",
+    "slug": "cabin-filter-replacement",
+    "name": "Cabin Filter Replacement",
+    "category": "General Maintenance",
+    "description": "Fresh cabin filter for cleaner air inside the vehicle and better AC airflow.",
+    "icon": "wrench",
+    "priceFrom": 799,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 30,
+    "benefits": [
+      "Longer engine life",
+      "Better fuel efficiency",
+      "Fewer unexpected breakdowns"
+    ],
+    "inclusions": [
+      "Old filter removal",
+      "Filter housing cleaning",
+      "New cabin filter fitment"
+    ],
+    "exclusions": [
+      "Replacement of worn parts beyond the listed items (quoted separately)",
+      "Repairs discovered during inspection"
+    ],
+    "vehicleTypes": [
+      "car",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "direct",
+    "available": true,
+    "popular": false,
+    "faqs": [
+      {
+        "q": "Is the price fixed?",
+        "a": "The price shown is a sample starting estimate. Any extra work or parts found necessary are quoted and done only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 30 minutes, depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_006",
+    "slug": "fluid-checks-and-top-ups",
+    "name": "Fluid Checks and Top-Ups",
+    "category": "General Maintenance",
+    "description": "Check and top up coolant, brake fluid, power steering, washer and battery fluids.",
+    "icon": "wrench",
+    "priceFrom": 399,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 30,
+    "benefits": [
+      "Longer engine life",
+      "Better fuel efficiency",
+      "Fewer unexpected breakdowns"
+    ],
+    "inclusions": [
+      "Coolant level check",
+      "Brake fluid check",
+      "Washer fluid top-up",
+      "Leak spot check"
+    ],
+    "exclusions": [
+      "Replacement of worn parts beyond the listed items (quoted separately)",
+      "Repairs discovered during inspection"
+    ],
+    "vehicleTypes": [
+      "car",
+      "motorcycle",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "direct",
+    "available": true,
+    "popular": false,
+    "faqs": [
+      {
+        "q": "Is the price fixed?",
+        "a": "The price shown is a sample starting estimate. Any extra work or parts found necessary are quoted and done only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 30 minutes, depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_007",
+    "slug": "preventive-maintenance-package",
+    "name": "Preventive Maintenance Package",
+    "category": "General Maintenance",
+    "description": "Comprehensive preventive care designed to catch wear before it turns into costly repairs.",
+    "icon": "wrench",
+    "priceFrom": 4999,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 240,
+    "benefits": [
+      "Longer engine life",
+      "Better fuel efficiency",
+      "Fewer unexpected breakdowns"
+    ],
+    "inclusions": [
+      "Periodic service items",
+      "Brake cleaning and adjustment",
+      "Suspension check",
+      "Battery health check",
+      "Wheel balancing"
+    ],
+    "exclusions": [
+      "Replacement of worn parts beyond the listed items (quoted separately)",
+      "Repairs discovered during inspection"
+    ],
+    "vehicleTypes": [
+      "car",
+      "motorcycle",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "direct",
+    "available": true,
+    "popular": false,
+    "faqs": [
+      {
+        "q": "Is the price fixed?",
+        "a": "The price shown is a sample starting estimate. Any extra work or parts found necessary are quoted and done only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 4 hour(s), depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_008",
+    "slug": "manufacturer-recommended-maintenance",
+    "name": "Manufacturer-Recommended Maintenance",
+    "category": "General Maintenance",
+    "description": "Service performed as per the manufacturer schedule for your model and odometer reading.",
+    "icon": "wrench",
+    "priceFrom": 4499,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 240,
+    "benefits": [
+      "Longer engine life",
+      "Better fuel efficiency",
+      "Fewer unexpected breakdowns"
+    ],
+    "inclusions": [
+      "Schedule-based checklist",
+      "Recommended fluids and filters",
+      "Service log update"
+    ],
+    "exclusions": [
+      "Replacement of worn parts beyond the listed items (quoted separately)",
+      "Repairs discovered during inspection"
+    ],
+    "vehicleTypes": [
+      "car",
+      "motorcycle",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "inspection",
+    "available": true,
+    "popular": false,
+    "faqs": [
+      {
+        "q": "Why is a workshop inspection required?",
+        "a": "The final price depends on the condition of your vehicle. We inspect first, share an estimate and start work only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 4 hour(s), depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_009",
+    "slug": "engine-diagnostics",
+    "name": "Engine Diagnostics",
+    "category": "Engine and Mechanical Repairs",
+    "description": "Identify misfires, noises, smoke or warning lights using scan tools and hands-on testing.",
+    "icon": "engine",
+    "priceFrom": 999,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 60,
+    "benefits": [
+      "Restored performance",
+      "Diagnosis by trained technicians",
+      "Transparent estimates before work"
+    ],
+    "inclusions": [
+      "OBD scan where supported",
+      "Compression check if needed",
+      "Fault report and estimate"
+    ],
+    "exclusions": [
+      "Major parts are quoted after diagnosis",
+      "Machining by external vendors where required"
+    ],
+    "vehicleTypes": [
+      "car",
+      "motorcycle",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "direct",
+    "available": true,
+    "popular": true,
+    "faqs": [
+      {
+        "q": "Is the price fixed?",
+        "a": "The price shown is a sample starting estimate. Any extra work or parts found necessary are quoted and done only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 1 hour(s), depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_010",
+    "slug": "engine-repair",
+    "name": "Engine Repair",
+    "category": "Engine and Mechanical Repairs",
+    "description": "Repair of engine faults such as leaks, mounts, gaskets and internal wear. Final price after inspection.",
+    "icon": "engine",
+    "priceFrom": 4999,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 480,
+    "benefits": [
+      "Restored performance",
+      "Diagnosis by trained technicians",
+      "Transparent estimates before work"
+    ],
+    "inclusions": [
+      "Detailed inspection",
+      "Repair estimate approval",
+      "Repair and test drive"
+    ],
+    "exclusions": [
+      "Major parts are quoted after diagnosis",
+      "Machining by external vendors where required"
+    ],
+    "vehicleTypes": [
+      "car",
+      "motorcycle",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "inspection",
+    "available": true,
+    "popular": false,
+    "faqs": [
+      {
+        "q": "Why is a workshop inspection required?",
+        "a": "The final price depends on the condition of your vehicle. We inspect first, share an estimate and start work only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 8 hour(s), depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_011",
+    "slug": "cooling-system-and-radiator-repair",
+    "name": "Cooling System and Radiator Repair",
+    "category": "Engine and Mechanical Repairs",
+    "description": "Fix overheating, coolant leaks and radiator problems to protect your engine.",
+    "icon": "engine",
+    "priceFrom": 1499,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 120,
+    "benefits": [
+      "Restored performance",
+      "Diagnosis by trained technicians",
+      "Transparent estimates before work"
+    ],
+    "inclusions": [
+      "Pressure test",
+      "Radiator and hose check",
+      "Coolant flush if required",
+      "Thermostat check"
+    ],
+    "exclusions": [
+      "Major parts are quoted after diagnosis",
+      "Machining by external vendors where required"
+    ],
+    "vehicleTypes": [
+      "car",
+      "motorcycle",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "inspection",
+    "available": true,
+    "popular": false,
+    "faqs": [
+      {
+        "q": "Why is a workshop inspection required?",
+        "a": "The final price depends on the condition of your vehicle. We inspect first, share an estimate and start work only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 2 hour(s), depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_012",
+    "slug": "clutch-inspection-and-replacement",
+    "name": "Clutch Inspection and Replacement",
+    "category": "Engine and Mechanical Repairs",
+    "description": "Diagnose slipping, hard or noisy clutches and replace the clutch kit when worn.",
+    "icon": "engine",
+    "priceFrom": 1499,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 300,
+    "benefits": [
+      "Restored performance",
+      "Diagnosis by trained technicians",
+      "Transparent estimates before work"
+    ],
+    "inclusions": [
+      "Clutch play and slip test",
+      "Clutch kit replacement (if approved)",
+      "Road test"
+    ],
+    "exclusions": [
+      "Major parts are quoted after diagnosis",
+      "Machining by external vendors where required"
+    ],
+    "vehicleTypes": [
+      "car",
+      "motorcycle",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "inspection",
+    "available": true,
+    "popular": false,
+    "faqs": [
+      {
+        "q": "Why is a workshop inspection required?",
+        "a": "The final price depends on the condition of your vehicle. We inspect first, share an estimate and start work only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 5 hour(s), depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_013",
+    "slug": "transmission-inspection-and-repair",
+    "name": "Transmission Inspection and Repair",
+    "category": "Engine and Mechanical Repairs",
+    "description": "Manual and automatic transmission diagnosis covering shifting, noises and leaks.",
+    "icon": "engine",
+    "priceFrom": 1999,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 240,
+    "benefits": [
+      "Restored performance",
+      "Diagnosis by trained technicians",
+      "Transparent estimates before work"
+    ],
+    "inclusions": [
+      "Gear shift diagnosis",
+      "Transmission oil check",
+      "Leak inspection",
+      "Repair estimate"
+    ],
+    "exclusions": [
+      "Major parts are quoted after diagnosis",
+      "Machining by external vendors where required"
+    ],
+    "vehicleTypes": [
+      "car",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "inspection",
+    "available": true,
+    "popular": false,
+    "faqs": [
+      {
+        "q": "Why is a workshop inspection required?",
+        "a": "The final price depends on the condition of your vehicle. We inspect first, share an estimate and start work only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 4 hour(s), depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_014",
+    "slug": "fuel-system-maintenance",
+    "name": "Fuel System Maintenance",
+    "category": "Engine and Mechanical Repairs",
+    "description": "Clean injectors and throttle body, and check the fuel delivery system for smoother running.",
+    "icon": "engine",
+    "priceFrom": 1799,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 90,
+    "benefits": [
+      "Restored performance",
+      "Diagnosis by trained technicians",
+      "Transparent estimates before work"
+    ],
+    "inclusions": [
+      "Throttle body cleaning",
+      "Fuel injector cleaning",
+      "Fuel filter check"
+    ],
+    "exclusions": [
+      "Major parts are quoted after diagnosis",
+      "Machining by external vendors where required"
+    ],
+    "vehicleTypes": [
+      "car",
+      "motorcycle",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "direct",
+    "available": true,
+    "popular": false,
+    "faqs": [
+      {
+        "q": "Is the price fixed?",
+        "a": "The price shown is a sample starting estimate. Any extra work or parts found necessary are quoted and done only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 1.5 hour(s), depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_015",
+    "slug": "exhaust-system-inspection-and-repair",
+    "name": "Exhaust System Inspection and Repair",
+    "category": "Engine and Mechanical Repairs",
+    "description": "Inspect and repair exhaust leaks, damaged silencers and loose mountings.",
+    "icon": "engine",
+    "priceFrom": 799,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 90,
+    "benefits": [
+      "Restored performance",
+      "Diagnosis by trained technicians",
+      "Transparent estimates before work"
+    ],
+    "inclusions": [
+      "Exhaust leak check",
+      "Mounting inspection",
+      "Silencer check"
+    ],
+    "exclusions": [
+      "Major parts are quoted after diagnosis",
+      "Machining by external vendors where required"
+    ],
+    "vehicleTypes": [
+      "car",
+      "motorcycle",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "inspection",
+    "available": true,
+    "popular": false,
+    "faqs": [
+      {
+        "q": "Why is a workshop inspection required?",
+        "a": "The final price depends on the condition of your vehicle. We inspect first, share an estimate and start work only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 1.5 hour(s), depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_016",
+    "slug": "belt-and-hose-replacement",
+    "name": "Belt and Hose Replacement",
+    "category": "Engine and Mechanical Repairs",
+    "description": "Replace cracked or worn drive belts and hoses before they fail on the road.",
+    "icon": "engine",
+    "priceFrom": 1299,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 120,
+    "benefits": [
+      "Restored performance",
+      "Diagnosis by trained technicians",
+      "Transparent estimates before work"
+    ],
+    "inclusions": [
+      "Belt tension and wear check",
+      "Hose condition check",
+      "Replacement of approved parts"
+    ],
+    "exclusions": [
+      "Major parts are quoted after diagnosis",
+      "Machining by external vendors where required"
+    ],
+    "vehicleTypes": [
+      "car",
+      "motorcycle",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "inspection",
+    "available": true,
+    "popular": false,
+    "faqs": [
+      {
+        "q": "Why is a workshop inspection required?",
+        "a": "The final price depends on the condition of your vehicle. We inspect first, share an estimate and start work only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 2 hour(s), depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_017",
+    "slug": "brake-inspection",
+    "name": "Brake Inspection",
+    "category": "Brake Services",
+    "description": "Check pads, discs, drums, fluid and lines for wear and leaks.",
+    "icon": "disc",
+    "priceFrom": 399,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 45,
+    "benefits": [
+      "Safer, shorter stopping",
+      "Quieter braking",
+      "Genuine or OEM-equivalent parts"
+    ],
+    "inclusions": [
+      "Pad and shoe thickness check",
+      "Disc and drum check",
+      "Brake fluid check",
+      "Test drive"
+    ],
+    "exclusions": [
+      "Brake parts are charged separately unless stated",
+      "Hydraulic unit repairs"
+    ],
+    "vehicleTypes": [
+      "car",
+      "motorcycle",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "direct",
+    "available": true,
+    "popular": true,
+    "faqs": [
+      {
+        "q": "Is the price fixed?",
+        "a": "The price shown is a sample starting estimate. Any extra work or parts found necessary are quoted and done only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 45 minutes, depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_018",
+    "slug": "brake-pad-replacement",
+    "name": "Brake Pad Replacement",
+    "category": "Brake Services",
+    "description": "Replace worn front or rear brake pads and clean the caliper assembly.",
+    "icon": "disc",
+    "priceFrom": 1999,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 90,
+    "benefits": [
+      "Safer, shorter stopping",
+      "Quieter braking",
+      "Genuine or OEM-equivalent parts"
+    ],
+    "inclusions": [
+      "Old pad removal",
+      "Caliper cleaning and lubrication",
+      "New pad fitment",
+      "Bedding-in test"
+    ],
+    "exclusions": [
+      "Brake parts are charged separately unless stated",
+      "Hydraulic unit repairs"
+    ],
+    "vehicleTypes": [
+      "car",
+      "motorcycle",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "direct",
+    "available": true,
+    "popular": true,
+    "faqs": [
+      {
+        "q": "Is the price fixed?",
+        "a": "The price shown is a sample starting estimate. Any extra work or parts found necessary are quoted and done only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 1.5 hour(s), depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_019",
+    "slug": "brake-disc-inspection-and-replacement",
+    "name": "Brake Disc Inspection and Replacement",
+    "category": "Brake Services",
+    "description": "Measure disc thickness and run-out; resurface or replace warped and worn discs.",
+    "icon": "disc",
+    "priceFrom": 2999,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 120,
+    "benefits": [
+      "Safer, shorter stopping",
+      "Quieter braking",
+      "Genuine or OEM-equivalent parts"
+    ],
+    "inclusions": [
+      "Disc thickness measurement",
+      "Run-out check",
+      "Resurfacing or replacement"
+    ],
+    "exclusions": [
+      "Brake parts are charged separately unless stated",
+      "Hydraulic unit repairs"
+    ],
+    "vehicleTypes": [
+      "car",
+      "motorcycle",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "inspection",
+    "available": true,
+    "popular": false,
+    "faqs": [
+      {
+        "q": "Why is a workshop inspection required?",
+        "a": "The final price depends on the condition of your vehicle. We inspect first, share an estimate and start work only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 2 hour(s), depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_020",
+    "slug": "brake-fluid-replacement",
+    "name": "Brake Fluid Replacement",
+    "category": "Brake Services",
+    "description": "Flush old, moisture-contaminated brake fluid and refill with fresh fluid.",
+    "icon": "disc",
+    "priceFrom": 999,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 60,
+    "benefits": [
+      "Safer, shorter stopping",
+      "Quieter braking",
+      "Genuine or OEM-equivalent parts"
+    ],
+    "inclusions": [
+      "Complete fluid flush",
+      "Bleeding of all wheels",
+      "Pedal feel check"
+    ],
+    "exclusions": [
+      "Brake parts are charged separately unless stated",
+      "Hydraulic unit repairs"
+    ],
+    "vehicleTypes": [
+      "car",
+      "motorcycle",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "direct",
+    "available": true,
+    "popular": false,
+    "faqs": [
+      {
+        "q": "Is the price fixed?",
+        "a": "The price shown is a sample starting estimate. Any extra work or parts found necessary are quoted and done only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 1 hour(s), depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_021",
+    "slug": "abs-diagnostics",
+    "name": "ABS Diagnostics",
+    "category": "Brake Services",
+    "description": "Diagnose ABS warning lights, sensors and modulator faults.",
+    "icon": "disc",
+    "priceFrom": 1199,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 60,
+    "benefits": [
+      "Safer, shorter stopping",
+      "Quieter braking",
+      "Genuine or OEM-equivalent parts"
+    ],
+    "inclusions": [
+      "ABS fault code scan",
+      "Wheel speed sensor check",
+      "Wiring check"
+    ],
+    "exclusions": [
+      "Brake parts are charged separately unless stated",
+      "Hydraulic unit repairs"
+    ],
+    "vehicleTypes": [
+      "car",
+      "motorcycle",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "direct",
+    "available": true,
+    "popular": false,
+    "faqs": [
+      {
+        "q": "Is the price fixed?",
+        "a": "The price shown is a sample starting estimate. Any extra work or parts found necessary are quoted and done only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 1 hour(s), depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_022",
+    "slug": "tyre-inspection-and-replacement",
+    "name": "Tyre Inspection and Replacement",
+    "category": "Tyre and Wheel Services",
+    "description": "Inspect tread depth, sidewalls and age; replace tyres with the right size and load rating.",
+    "icon": "tyre",
+    "priceFrom": 499,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 60,
+    "benefits": [
+      "Even tyre wear",
+      "Better handling and comfort",
+      "Improved mileage"
+    ],
+    "inclusions": [
+      "Tread depth check",
+      "Sidewall inspection",
+      "Tyre fitment (tyre cost extra)",
+      "Pressure setting"
+    ],
+    "exclusions": [
+      "Tyre and tube cost is extra",
+      "Rim straightening by specialist vendors"
+    ],
+    "vehicleTypes": [
+      "car",
+      "motorcycle",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "direct",
+    "available": true,
+    "popular": false,
+    "faqs": [
+      {
+        "q": "Is the price fixed?",
+        "a": "The price shown is a sample starting estimate. Any extra work or parts found necessary are quoted and done only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 1 hour(s), depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_023",
+    "slug": "wheel-balancing",
+    "name": "Wheel Balancing",
+    "category": "Tyre and Wheel Services",
+    "description": "Computerised wheel balancing to remove vibrations at speed.",
+    "icon": "tyre",
+    "priceFrom": 599,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 45,
+    "benefits": [
+      "Even tyre wear",
+      "Better handling and comfort",
+      "Improved mileage"
+    ],
+    "inclusions": [
+      "Computerised balancing",
+      "Weights fitment",
+      "Pressure check"
+    ],
+    "exclusions": [
+      "Tyre and tube cost is extra",
+      "Rim straightening by specialist vendors"
+    ],
+    "vehicleTypes": [
+      "car",
+      "motorcycle",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "direct",
+    "available": true,
+    "popular": true,
+    "faqs": [
+      {
+        "q": "Is the price fixed?",
+        "a": "The price shown is a sample starting estimate. Any extra work or parts found necessary are quoted and done only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 45 minutes, depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_024",
+    "slug": "wheel-alignment",
+    "name": "Wheel Alignment",
+    "category": "Tyre and Wheel Services",
+    "description": "Computerised wheel alignment to correct pulling and uneven tyre wear.",
+    "icon": "tyre",
+    "priceFrom": 899,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 60,
+    "benefits": [
+      "Even tyre wear",
+      "Better handling and comfort",
+      "Improved mileage"
+    ],
+    "inclusions": [
+      "Alignment check",
+      "Camber, caster and toe adjustment",
+      "Print-out where supported"
+    ],
+    "exclusions": [
+      "Tyre and tube cost is extra",
+      "Rim straightening by specialist vendors"
+    ],
+    "vehicleTypes": [
+      "car",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "direct",
+    "available": true,
+    "popular": true,
+    "faqs": [
+      {
+        "q": "Is the price fixed?",
+        "a": "The price shown is a sample starting estimate. Any extra work or parts found necessary are quoted and done only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 1 hour(s), depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_025",
+    "slug": "puncture-repair",
+    "name": "Puncture Repair",
+    "category": "Tyre and Wheel Services",
+    "description": "Tubeless or tube puncture repair with leak check.",
+    "icon": "tyre",
+    "priceFrom": 199,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 30,
+    "benefits": [
+      "Even tyre wear",
+      "Better handling and comfort",
+      "Improved mileage"
+    ],
+    "inclusions": [
+      "Puncture location",
+      "Plug or patch repair",
+      "Leak test"
+    ],
+    "exclusions": [
+      "Tyre and tube cost is extra",
+      "Rim straightening by specialist vendors"
+    ],
+    "vehicleTypes": [
+      "car",
+      "motorcycle",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "direct",
+    "available": true,
+    "popular": false,
+    "faqs": [
+      {
+        "q": "Is the price fixed?",
+        "a": "The price shown is a sample starting estimate. Any extra work or parts found necessary are quoted and done only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 30 minutes, depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_026",
+    "slug": "tyre-rotation",
+    "name": "Tyre Rotation",
+    "category": "Tyre and Wheel Services",
+    "description": "Rotate tyres to equalise wear and extend tyre life.",
+    "icon": "tyre",
+    "priceFrom": 399,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 30,
+    "benefits": [
+      "Even tyre wear",
+      "Better handling and comfort",
+      "Improved mileage"
+    ],
+    "inclusions": [
+      "Tyre rotation",
+      "Pressure setting",
+      "Wheel nut torque check"
+    ],
+    "exclusions": [
+      "Tyre and tube cost is extra",
+      "Rim straightening by specialist vendors"
+    ],
+    "vehicleTypes": [
+      "car",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "direct",
+    "available": true,
+    "popular": false,
+    "faqs": [
+      {
+        "q": "Is the price fixed?",
+        "a": "The price shown is a sample starting estimate. Any extra work or parts found necessary are quoted and done only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 30 minutes, depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_027",
+    "slug": "wheel-and-rim-inspection",
+    "name": "Wheel and Rim Inspection",
+    "category": "Tyre and Wheel Services",
+    "description": "Check rims for bends, cracks and corrosion.",
+    "icon": "tyre",
+    "priceFrom": 299,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 30,
+    "benefits": [
+      "Even tyre wear",
+      "Better handling and comfort",
+      "Improved mileage"
+    ],
+    "inclusions": [
+      "Rim run-out check",
+      "Crack and corrosion check",
+      "Report"
+    ],
+    "exclusions": [
+      "Tyre and tube cost is extra",
+      "Rim straightening by specialist vendors"
+    ],
+    "vehicleTypes": [
+      "car",
+      "motorcycle",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "direct",
+    "available": true,
+    "popular": false,
+    "faqs": [
+      {
+        "q": "Is the price fixed?",
+        "a": "The price shown is a sample starting estimate. Any extra work or parts found necessary are quoted and done only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 30 minutes, depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_028",
+    "slug": "battery-health-check",
+    "name": "Battery Health Check",
+    "category": "Battery and Electrical Services",
+    "description": "Test battery voltage, cranking ability and charging system.",
+    "icon": "battery",
+    "priceFrom": 199,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 20,
+    "benefits": [
+      "Reliable starting",
+      "Fewer electrical surprises",
+      "Accurate diagnosis"
+    ],
+    "inclusions": [
+      "Battery load test",
+      "Terminal cleaning",
+      "Charging voltage check"
+    ],
+    "exclusions": [
+      "Battery and electrical parts cost extra",
+      "Aftermarket wiring rectification is quoted separately"
+    ],
+    "vehicleTypes": [
+      "car",
+      "motorcycle",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "direct",
+    "available": true,
+    "popular": true,
+    "faqs": [
+      {
+        "q": "Is the price fixed?",
+        "a": "The price shown is a sample starting estimate. Any extra work or parts found necessary are quoted and done only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 20 minutes, depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_029",
+    "slug": "battery-replacement",
+    "name": "Battery Replacement",
+    "category": "Battery and Electrical Services",
+    "description": "Supply-and-fit or fit-only battery replacement with old battery disposal.",
+    "icon": "battery",
+    "priceFrom": 499,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 30,
+    "benefits": [
+      "Reliable starting",
+      "Fewer electrical surprises",
+      "Accurate diagnosis"
+    ],
+    "inclusions": [
+      "Old battery removal",
+      "New battery fitment (battery cost extra)",
+      "Terminal protection"
+    ],
+    "exclusions": [
+      "Battery and electrical parts cost extra",
+      "Aftermarket wiring rectification is quoted separately"
+    ],
+    "vehicleTypes": [
+      "car",
+      "motorcycle",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "direct",
+    "available": true,
+    "popular": false,
+    "faqs": [
+      {
+        "q": "Is the price fixed?",
+        "a": "The price shown is a sample starting estimate. Any extra work or parts found necessary are quoted and done only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 30 minutes, depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_030",
+    "slug": "alternator-inspection",
+    "name": "Alternator Inspection",
+    "category": "Battery and Electrical Services",
+    "description": "Check alternator output and belt condition when batteries keep draining.",
+    "icon": "battery",
+    "priceFrom": 599,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 45,
+    "benefits": [
+      "Reliable starting",
+      "Fewer electrical surprises",
+      "Accurate diagnosis"
+    ],
+    "inclusions": [
+      "Output test",
+      "Belt check",
+      "Wiring check"
+    ],
+    "exclusions": [
+      "Battery and electrical parts cost extra",
+      "Aftermarket wiring rectification is quoted separately"
+    ],
+    "vehicleTypes": [
+      "car",
+      "motorcycle",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "direct",
+    "available": true,
+    "popular": false,
+    "faqs": [
+      {
+        "q": "Is the price fixed?",
+        "a": "The price shown is a sample starting estimate. Any extra work or parts found necessary are quoted and done only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 45 minutes, depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_031",
+    "slug": "starter-motor-inspection",
+    "name": "Starter Motor Inspection",
+    "category": "Battery and Electrical Services",
+    "description": "Diagnose clicking or slow cranking and inspect the starter motor and relay.",
+    "icon": "battery",
+    "priceFrom": 699,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 60,
+    "benefits": [
+      "Reliable starting",
+      "Fewer electrical surprises",
+      "Accurate diagnosis"
+    ],
+    "inclusions": [
+      "Cranking test",
+      "Starter relay check",
+      "Repair estimate"
+    ],
+    "exclusions": [
+      "Battery and electrical parts cost extra",
+      "Aftermarket wiring rectification is quoted separately"
+    ],
+    "vehicleTypes": [
+      "car",
+      "motorcycle",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "inspection",
+    "available": true,
+    "popular": false,
+    "faqs": [
+      {
+        "q": "Why is a workshop inspection required?",
+        "a": "The final price depends on the condition of your vehicle. We inspect first, share an estimate and start work only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 1 hour(s), depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_032",
+    "slug": "lighting-repairs",
+    "name": "Lighting Repairs",
+    "category": "Battery and Electrical Services",
+    "description": "Repair or replace headlamps, tail lamps, indicators and interior lights.",
+    "icon": "battery",
+    "priceFrom": 299,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 45,
+    "benefits": [
+      "Reliable starting",
+      "Fewer electrical surprises",
+      "Accurate diagnosis"
+    ],
+    "inclusions": [
+      "Bulb and fuse check",
+      "Lamp replacement (parts extra)",
+      "Headlamp aim check"
+    ],
+    "exclusions": [
+      "Battery and electrical parts cost extra",
+      "Aftermarket wiring rectification is quoted separately"
+    ],
+    "vehicleTypes": [
+      "car",
+      "motorcycle",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "direct",
+    "available": true,
+    "popular": false,
+    "faqs": [
+      {
+        "q": "Is the price fixed?",
+        "a": "The price shown is a sample starting estimate. Any extra work or parts found necessary are quoted and done only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 45 minutes, depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_033",
+    "slug": "electrical-system-diagnostics",
+    "name": "Electrical System Diagnostics",
+    "category": "Battery and Electrical Services",
+    "description": "Trace faults in power windows, central locking, gauges and other circuits.",
+    "icon": "battery",
+    "priceFrom": 999,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 90,
+    "benefits": [
+      "Reliable starting",
+      "Fewer electrical surprises",
+      "Accurate diagnosis"
+    ],
+    "inclusions": [
+      "Circuit diagnosis",
+      "Fuse and relay check",
+      "Fault report"
+    ],
+    "exclusions": [
+      "Battery and electrical parts cost extra",
+      "Aftermarket wiring rectification is quoted separately"
+    ],
+    "vehicleTypes": [
+      "car",
+      "motorcycle",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "inspection",
+    "available": true,
+    "popular": false,
+    "faqs": [
+      {
+        "q": "Why is a workshop inspection required?",
+        "a": "The final price depends on the condition of your vehicle. We inspect first, share an estimate and start work only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 1.5 hour(s), depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_034",
+    "slug": "wiring-inspection",
+    "name": "Wiring Inspection",
+    "category": "Battery and Electrical Services",
+    "description": "Inspect harnesses for damage, rodent bites and unsafe aftermarket wiring.",
+    "icon": "battery",
+    "priceFrom": 799,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 60,
+    "benefits": [
+      "Reliable starting",
+      "Fewer electrical surprises",
+      "Accurate diagnosis"
+    ],
+    "inclusions": [
+      "Harness visual inspection",
+      "Rodent damage check",
+      "Safety report"
+    ],
+    "exclusions": [
+      "Battery and electrical parts cost extra",
+      "Aftermarket wiring rectification is quoted separately"
+    ],
+    "vehicleTypes": [
+      "car",
+      "motorcycle",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "inspection",
+    "available": true,
+    "popular": false,
+    "faqs": [
+      {
+        "q": "Why is a workshop inspection required?",
+        "a": "The final price depends on the condition of your vehicle. We inspect first, share an estimate and start work only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 1 hour(s), depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_035",
+    "slug": "ac-inspection",
+    "name": "AC Inspection",
+    "category": "Air Conditioning",
+    "description": "Check vent temperature, pressures, belt and condenser condition.",
+    "icon": "snow",
+    "priceFrom": 499,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 45,
+    "benefits": [
+      "Faster, stronger cooling",
+      "Fresher cabin air",
+      "Protects the compressor"
+    ],
+    "inclusions": [
+      "Vent temperature test",
+      "Pressure check",
+      "Condenser inspection"
+    ],
+    "exclusions": [
+      "Compressor and major AC parts are quoted separately"
+    ],
+    "vehicleTypes": [
+      "car",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "direct",
+    "available": true,
+    "popular": false,
+    "faqs": [
+      {
+        "q": "Is the price fixed?",
+        "a": "The price shown is a sample starting estimate. Any extra work or parts found necessary are quoted and done only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 45 minutes, depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_036",
+    "slug": "ac-gas-refill",
+    "name": "AC Gas Refill",
+    "category": "Air Conditioning",
+    "description": "Evacuate and recharge refrigerant to the specified quantity.",
+    "icon": "snow",
+    "priceFrom": 1999,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 90,
+    "benefits": [
+      "Faster, stronger cooling",
+      "Fresher cabin air",
+      "Protects the compressor"
+    ],
+    "inclusions": [
+      "Vacuum test",
+      "Refrigerant recharge",
+      "Cooling performance test"
+    ],
+    "exclusions": [
+      "Compressor and major AC parts are quoted separately"
+    ],
+    "vehicleTypes": [
+      "car",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "direct",
+    "available": true,
+    "popular": true,
+    "faqs": [
+      {
+        "q": "Is the price fixed?",
+        "a": "The price shown is a sample starting estimate. Any extra work or parts found necessary are quoted and done only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 1.5 hour(s), depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_037",
+    "slug": "ac-leak-detection",
+    "name": "AC Leak Detection",
+    "category": "Air Conditioning",
+    "description": "Find refrigerant leaks using UV dye or electronic detection.",
+    "icon": "snow",
+    "priceFrom": 999,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 60,
+    "benefits": [
+      "Faster, stronger cooling",
+      "Fresher cabin air",
+      "Protects the compressor"
+    ],
+    "inclusions": [
+      "Leak detection",
+      "Seal and hose inspection",
+      "Repair estimate"
+    ],
+    "exclusions": [
+      "Compressor and major AC parts are quoted separately"
+    ],
+    "vehicleTypes": [
+      "car",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "direct",
+    "available": true,
+    "popular": false,
+    "faqs": [
+      {
+        "q": "Is the price fixed?",
+        "a": "The price shown is a sample starting estimate. Any extra work or parts found necessary are quoted and done only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 1 hour(s), depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_038",
+    "slug": "compressor-inspection",
+    "name": "Compressor Inspection",
+    "category": "Air Conditioning",
+    "description": "Diagnose compressor noise, clutch and cooling issues.",
+    "icon": "snow",
+    "priceFrom": 899,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 60,
+    "benefits": [
+      "Faster, stronger cooling",
+      "Fresher cabin air",
+      "Protects the compressor"
+    ],
+    "inclusions": [
+      "Compressor clutch check",
+      "Noise diagnosis",
+      "Repair estimate"
+    ],
+    "exclusions": [
+      "Compressor and major AC parts are quoted separately"
+    ],
+    "vehicleTypes": [
+      "car",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "inspection",
+    "available": true,
+    "popular": false,
+    "faqs": [
+      {
+        "q": "Why is a workshop inspection required?",
+        "a": "The final price depends on the condition of your vehicle. We inspect first, share an estimate and start work only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 1 hour(s), depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_039",
+    "slug": "cabin-cooling-system-maintenance",
+    "name": "Cabin Cooling System Maintenance",
+    "category": "Air Conditioning",
+    "description": "Clean evaporator and vents for better cooling and fresher air.",
+    "icon": "snow",
+    "priceFrom": 1499,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 90,
+    "benefits": [
+      "Faster, stronger cooling",
+      "Fresher cabin air",
+      "Protects the compressor"
+    ],
+    "inclusions": [
+      "Evaporator foam cleaning",
+      "Vent disinfection",
+      "Cabin filter check"
+    ],
+    "exclusions": [
+      "Compressor and major AC parts are quoted separately"
+    ],
+    "vehicleTypes": [
+      "car",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "direct",
+    "available": true,
+    "popular": false,
+    "faqs": [
+      {
+        "q": "Is the price fixed?",
+        "a": "The price shown is a sample starting estimate. Any extra work or parts found necessary are quoted and done only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 1.5 hour(s), depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_040",
+    "slug": "exterior-wash",
+    "name": "Exterior Wash",
+    "category": "Cleaning and Detailing",
+    "description": "Foam wash, rinse and hand dry with tyre dressing.",
+    "icon": "sparkle",
+    "priceFrom": 399,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 45,
+    "benefits": [
+      "Showroom-like finish",
+      "Protects paint and interiors",
+      "Higher resale value"
+    ],
+    "inclusions": [
+      "Foam wash",
+      "Hand dry",
+      "Tyre dressing"
+    ],
+    "exclusions": [
+      "Removal of permanent stains or paint defects is not guaranteed"
+    ],
+    "vehicleTypes": [
+      "car",
+      "motorcycle",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "direct",
+    "available": true,
+    "popular": true,
+    "faqs": [
+      {
+        "q": "Is the price fixed?",
+        "a": "The price shown is a sample starting estimate. Any extra work or parts found necessary are quoted and done only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 45 minutes, depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_041",
+    "slug": "interior-cleaning",
+    "name": "Interior Cleaning",
+    "category": "Cleaning and Detailing",
+    "description": "Vacuuming, dashboard wipe-down and glass cleaning.",
+    "icon": "sparkle",
+    "priceFrom": 699,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 60,
+    "benefits": [
+      "Showroom-like finish",
+      "Protects paint and interiors",
+      "Higher resale value"
+    ],
+    "inclusions": [
+      "Vacuuming",
+      "Dashboard cleaning",
+      "Glass cleaning"
+    ],
+    "exclusions": [
+      "Removal of permanent stains or paint defects is not guaranteed"
+    ],
+    "vehicleTypes": [
+      "car",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "direct",
+    "available": true,
+    "popular": false,
+    "faqs": [
+      {
+        "q": "Is the price fixed?",
+        "a": "The price shown is a sample starting estimate. Any extra work or parts found necessary are quoted and done only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 1 hour(s), depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_042",
+    "slug": "full-vehicle-detailing",
+    "name": "Full Vehicle Detailing",
+    "category": "Cleaning and Detailing",
+    "description": "Complete interior and exterior detailing for a near-showroom finish.",
+    "icon": "sparkle",
+    "priceFrom": 3999,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 300,
+    "benefits": [
+      "Showroom-like finish",
+      "Protects paint and interiors",
+      "Higher resale value"
+    ],
+    "inclusions": [
+      "Exterior decontamination",
+      "Machine polish",
+      "Interior deep clean",
+      "Protective dressing"
+    ],
+    "exclusions": [
+      "Removal of permanent stains or paint defects is not guaranteed"
+    ],
+    "vehicleTypes": [
+      "car",
+      "motorcycle",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "direct",
+    "available": true,
+    "popular": true,
+    "faqs": [
+      {
+        "q": "Is the price fixed?",
+        "a": "The price shown is a sample starting estimate. Any extra work or parts found necessary are quoted and done only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 5 hour(s), depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_043",
+    "slug": "interior-deep-cleaning",
+    "name": "Interior Deep Cleaning",
+    "category": "Cleaning and Detailing",
+    "description": "Shampooing of seats, carpets and roof liner with stain treatment.",
+    "icon": "sparkle",
+    "priceFrom": 2499,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 240,
+    "benefits": [
+      "Showroom-like finish",
+      "Protects paint and interiors",
+      "Higher resale value"
+    ],
+    "inclusions": [
+      "Seat and carpet shampoo",
+      "Roof liner cleaning",
+      "Odour treatment"
+    ],
+    "exclusions": [
+      "Removal of permanent stains or paint defects is not guaranteed"
+    ],
+    "vehicleTypes": [
+      "car",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "direct",
+    "available": true,
+    "popular": false,
+    "faqs": [
+      {
+        "q": "Is the price fixed?",
+        "a": "The price shown is a sample starting estimate. Any extra work or parts found necessary are quoted and done only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 4 hour(s), depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_044",
+    "slug": "polishing-and-waxing",
+    "name": "Polishing and Waxing",
+    "category": "Cleaning and Detailing",
+    "description": "Machine polishing to reduce swirl marks, finished with protective wax.",
+    "icon": "sparkle",
+    "priceFrom": 1999,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 180,
+    "benefits": [
+      "Showroom-like finish",
+      "Protects paint and interiors",
+      "Higher resale value"
+    ],
+    "inclusions": [
+      "Paint decontamination",
+      "Machine polishing",
+      "Wax protection"
+    ],
+    "exclusions": [
+      "Removal of permanent stains or paint defects is not guaranteed"
+    ],
+    "vehicleTypes": [
+      "car",
+      "motorcycle",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "direct",
+    "available": true,
+    "popular": false,
+    "faqs": [
+      {
+        "q": "Is the price fixed?",
+        "a": "The price shown is a sample starting estimate. Any extra work or parts found necessary are quoted and done only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 3 hour(s), depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_045",
+    "slug": "paint-protection-services",
+    "name": "Paint Protection Services",
+    "category": "Cleaning and Detailing",
+    "description": "Ceramic coating or paint protection film consultation and application.",
+    "icon": "sparkle",
+    "priceFrom": 9999,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 480,
+    "benefits": [
+      "Showroom-like finish",
+      "Protects paint and interiors",
+      "Higher resale value"
+    ],
+    "inclusions": [
+      "Paint condition assessment",
+      "Surface preparation",
+      "Coating application"
+    ],
+    "exclusions": [
+      "Removal of permanent stains or paint defects is not guaranteed"
+    ],
+    "vehicleTypes": [
+      "car",
+      "motorcycle",
+      "suv"
+    ],
+    "bookingMode": "inspection",
+    "available": true,
+    "popular": false,
+    "faqs": [
+      {
+        "q": "Why is a workshop inspection required?",
+        "a": "The final price depends on the condition of your vehicle. We inspect first, share an estimate and start work only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 8 hour(s), depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_046",
+    "slug": "dent-repair",
+    "name": "Dent Repair",
+    "category": "Bodywork and Exterior Repairs",
+    "description": "Paintless dent removal or conventional repair depending on damage.",
+    "icon": "car",
+    "priceFrom": 1499,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 180,
+    "benefits": [
+      "Colour-matched finish",
+      "Restored looks and value",
+      "Workmanship you can inspect"
+    ],
+    "inclusions": [
+      "Damage assessment",
+      "Dent removal",
+      "Finish check"
+    ],
+    "exclusions": [
+      "Final price depends on damage assessment",
+      "Insurance approvals are handled separately"
+    ],
+    "vehicleTypes": [
+      "car",
+      "motorcycle",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "inspection",
+    "available": true,
+    "popular": false,
+    "faqs": [
+      {
+        "q": "Why is a workshop inspection required?",
+        "a": "The final price depends on the condition of your vehicle. We inspect first, share an estimate and start work only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 3 hour(s), depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_047",
+    "slug": "scratch-removal",
+    "name": "Scratch Removal",
+    "category": "Bodywork and Exterior Repairs",
+    "description": "Polish-out of light scratches or touch-up of deeper ones.",
+    "icon": "car",
+    "priceFrom": 999,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 120,
+    "benefits": [
+      "Colour-matched finish",
+      "Restored looks and value",
+      "Workmanship you can inspect"
+    ],
+    "inclusions": [
+      "Scratch depth check",
+      "Polish or touch-up",
+      "Finish check"
+    ],
+    "exclusions": [
+      "Final price depends on damage assessment",
+      "Insurance approvals are handled separately"
+    ],
+    "vehicleTypes": [
+      "car",
+      "motorcycle",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "inspection",
+    "available": true,
+    "popular": false,
+    "faqs": [
+      {
+        "q": "Why is a workshop inspection required?",
+        "a": "The final price depends on the condition of your vehicle. We inspect first, share an estimate and start work only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 2 hour(s), depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_048",
+    "slug": "paint-repair",
+    "name": "Paint Repair",
+    "category": "Bodywork and Exterior Repairs",
+    "description": "Panel painting with computerised colour matching.",
+    "icon": "car",
+    "priceFrom": 2999,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 1440,
+    "benefits": [
+      "Colour-matched finish",
+      "Restored looks and value",
+      "Workmanship you can inspect"
+    ],
+    "inclusions": [
+      "Panel preparation",
+      "Colour matching",
+      "Paint and clear coat"
+    ],
+    "exclusions": [
+      "Final price depends on damage assessment",
+      "Insurance approvals are handled separately"
+    ],
+    "vehicleTypes": [
+      "car",
+      "motorcycle",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "inspection",
+    "available": true,
+    "popular": false,
+    "faqs": [
+      {
+        "q": "Why is a workshop inspection required?",
+        "a": "The final price depends on the condition of your vehicle. We inspect first, share an estimate and start work only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 24 hour(s), depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_049",
+    "slug": "bumper-repair",
+    "name": "Bumper Repair",
+    "category": "Bodywork and Exterior Repairs",
+    "description": "Repair cracked or misaligned bumpers, or replace when beyond repair.",
+    "icon": "car",
+    "priceFrom": 1999,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 240,
+    "benefits": [
+      "Colour-matched finish",
+      "Restored looks and value",
+      "Workmanship you can inspect"
+    ],
+    "inclusions": [
+      "Bumper assessment",
+      "Plastic welding or replacement",
+      "Painting if required"
+    ],
+    "exclusions": [
+      "Final price depends on damage assessment",
+      "Insurance approvals are handled separately"
+    ],
+    "vehicleTypes": [
+      "car",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "inspection",
+    "available": true,
+    "popular": false,
+    "faqs": [
+      {
+        "q": "Why is a workshop inspection required?",
+        "a": "The final price depends on the condition of your vehicle. We inspect first, share an estimate and start work only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 4 hour(s), depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_050",
+    "slug": "windshield-inspection-and-replacement",
+    "name": "Windshield Inspection and Replacement",
+    "category": "Bodywork and Exterior Repairs",
+    "description": "Inspect chips and cracks; repair or replace the windshield.",
+    "icon": "car",
+    "priceFrom": 999,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 180,
+    "benefits": [
+      "Colour-matched finish",
+      "Restored looks and value",
+      "Workmanship you can inspect"
+    ],
+    "inclusions": [
+      "Chip and crack assessment",
+      "Repair or replacement (glass extra)",
+      "Seal check"
+    ],
+    "exclusions": [
+      "Final price depends on damage assessment",
+      "Insurance approvals are handled separately"
+    ],
+    "vehicleTypes": [
+      "car",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "inspection",
+    "available": true,
+    "popular": false,
+    "faqs": [
+      {
+        "q": "Why is a workshop inspection required?",
+        "a": "The final price depends on the condition of your vehicle. We inspect first, share an estimate and start work only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 3 hour(s), depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_051",
+    "slug": "mirror-and-glass-replacement",
+    "name": "Mirror and Glass Replacement",
+    "category": "Bodywork and Exterior Repairs",
+    "description": "Replace damaged side mirrors, door glass and quarter glass.",
+    "icon": "car",
+    "priceFrom": 799,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 120,
+    "benefits": [
+      "Colour-matched finish",
+      "Restored looks and value",
+      "Workmanship you can inspect"
+    ],
+    "inclusions": [
+      "Damage assessment",
+      "Glass or mirror replacement (parts extra)",
+      "Function check"
+    ],
+    "exclusions": [
+      "Final price depends on damage assessment",
+      "Insurance approvals are handled separately"
+    ],
+    "vehicleTypes": [
+      "car",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "inspection",
+    "available": true,
+    "popular": false,
+    "faqs": [
+      {
+        "q": "Why is a workshop inspection required?",
+        "a": "The final price depends on the condition of your vehicle. We inspect first, share an estimate and start work only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 2 hour(s), depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_052",
+    "slug": "computerised-vehicle-diagnostics",
+    "name": "Computerised Vehicle Diagnostics",
+    "category": "Inspection and Diagnostics",
+    "description": "Full scan of electronic control units with a written fault report.",
+    "icon": "scan",
+    "priceFrom": 999,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 60,
+    "benefits": [
+      "Clear, written findings",
+      "Buy and travel with confidence",
+      "Prioritised repair list"
+    ],
+    "inclusions": [
+      "ECU scan where supported",
+      "Live data review",
+      "Fault report"
+    ],
+    "exclusions": [
+      "Repairs are quoted separately",
+      "Inspection is not a guarantee against future faults"
+    ],
+    "vehicleTypes": [
+      "car",
+      "motorcycle",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "direct",
+    "available": true,
+    "popular": true,
+    "faqs": [
+      {
+        "q": "Is the price fixed?",
+        "a": "The price shown is a sample starting estimate. Any extra work or parts found necessary are quoted and done only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 1 hour(s), depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_053",
+    "slug": "pre-purchase-inspection",
+    "name": "Pre-Purchase Inspection",
+    "category": "Inspection and Diagnostics",
+    "description": "Independent check of a used vehicle before you buy it.",
+    "icon": "scan",
+    "priceFrom": 1999,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 120,
+    "benefits": [
+      "Clear, written findings",
+      "Buy and travel with confidence",
+      "Prioritised repair list"
+    ],
+    "inclusions": [
+      "Body and paint check",
+      "Engine and transmission check",
+      "Road test",
+      "Written report"
+    ],
+    "exclusions": [
+      "Repairs are quoted separately",
+      "Inspection is not a guarantee against future faults"
+    ],
+    "vehicleTypes": [
+      "car",
+      "motorcycle",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "direct",
+    "available": true,
+    "popular": false,
+    "faqs": [
+      {
+        "q": "Is the price fixed?",
+        "a": "The price shown is a sample starting estimate. Any extra work or parts found necessary are quoted and done only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 2 hour(s), depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_054",
+    "slug": "pre-trip-inspection",
+    "name": "Pre-Trip Inspection",
+    "category": "Inspection and Diagnostics",
+    "description": "Get road-trip ready with checks on tyres, brakes, fluids and lights.",
+    "icon": "scan",
+    "priceFrom": 699,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 60,
+    "benefits": [
+      "Clear, written findings",
+      "Buy and travel with confidence",
+      "Prioritised repair list"
+    ],
+    "inclusions": [
+      "Tyre and spare check",
+      "Brake check",
+      "Fluid levels",
+      "Lights and wipers"
+    ],
+    "exclusions": [
+      "Repairs are quoted separately",
+      "Inspection is not a guarantee against future faults"
+    ],
+    "vehicleTypes": [
+      "car",
+      "motorcycle",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "direct",
+    "available": true,
+    "popular": false,
+    "faqs": [
+      {
+        "q": "Is the price fixed?",
+        "a": "The price shown is a sample starting estimate. Any extra work or parts found necessary are quoted and done only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 1 hour(s), depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_055",
+    "slug": "comprehensive-vehicle-health-check",
+    "name": "Comprehensive Vehicle Health Check",
+    "category": "Inspection and Diagnostics",
+    "description": "A 75-point health check with photos and a prioritised recommendations list.",
+    "icon": "scan",
+    "priceFrom": 1499,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 90,
+    "benefits": [
+      "Clear, written findings",
+      "Buy and travel with confidence",
+      "Prioritised repair list"
+    ],
+    "inclusions": [
+      "75-point checklist",
+      "Battery test",
+      "Underbody inspection",
+      "Recommendations report"
+    ],
+    "exclusions": [
+      "Repairs are quoted separately",
+      "Inspection is not a guarantee against future faults"
+    ],
+    "vehicleTypes": [
+      "car",
+      "motorcycle",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "direct",
+    "available": true,
+    "popular": true,
+    "faqs": [
+      {
+        "q": "Is the price fixed?",
+        "a": "The price shown is a sample starting estimate. Any extra work or parts found necessary are quoted and done only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 1.5 hour(s), depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_056",
+    "slug": "roadworthiness-inspection",
+    "name": "Roadworthiness Inspection",
+    "category": "Inspection and Diagnostics",
+    "description": "Check safety-critical items before a fitness test or long use.",
+    "icon": "scan",
+    "priceFrom": 999,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 60,
+    "benefits": [
+      "Clear, written findings",
+      "Buy and travel with confidence",
+      "Prioritised repair list"
+    ],
+    "inclusions": [
+      "Brakes and steering",
+      "Lights and signals",
+      "Emissions-related checks",
+      "Report"
+    ],
+    "exclusions": [
+      "Repairs are quoted separately",
+      "Inspection is not a guarantee against future faults"
+    ],
+    "vehicleTypes": [
+      "car",
+      "motorcycle",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "direct",
+    "available": true,
+    "popular": false,
+    "faqs": [
+      {
+        "q": "Is the price fixed?",
+        "a": "The price shown is a sample starting estimate. Any extra work or parts found necessary are quoted and done only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 1 hour(s), depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_057",
+    "slug": "pickup-and-drop-off-request",
+    "name": "Pickup and Drop-Off Request",
+    "category": "Additional Services",
+    "description": "Request vehicle pickup from and drop-off to your address. Subject to availability and confirmation.",
+    "icon": "plus",
+    "priceFrom": 299,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 30,
+    "benefits": [
+      "Convenience",
+      "Single point of contact",
+      "Transparent confirmation"
+    ],
+    "inclusions": [
+      "Pickup scheduling",
+      "Vehicle condition note at pickup",
+      "Drop-off after service"
+    ],
+    "exclusions": [
+      "Subject to availability and confirmation",
+      "Third-party charges where applicable"
+    ],
+    "vehicleTypes": [
+      "car",
+      "motorcycle",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "request",
+    "available": true,
+    "popular": false,
+    "faqs": [
+      {
+        "q": "Is my request confirmed immediately?",
+        "a": "No. This is a request. Our team or partner will contact you to confirm availability, timing and any charges."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 30 minutes, depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_058",
+    "slug": "roadside-assistance-request",
+    "name": "Roadside Assistance Request",
+    "category": "Additional Services",
+    "description": "Request help for minor on-road issues. Our team calls back to confirm availability; this is not an emergency service.",
+    "icon": "plus",
+    "priceFrom": 999,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 60,
+    "benefits": [
+      "Convenience",
+      "Single point of contact",
+      "Transparent confirmation"
+    ],
+    "inclusions": [
+      "Call-back from advisor",
+      "On-site help where available",
+      "Towing arranged via partners (extra)"
+    ],
+    "exclusions": [
+      "Subject to availability and confirmation",
+      "Third-party charges where applicable"
+    ],
+    "vehicleTypes": [
+      "car",
+      "motorcycle",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "request",
+    "available": true,
+    "popular": false,
+    "faqs": [
+      {
+        "q": "Is my request confirmed immediately?",
+        "a": "No. This is a request. Our team or partner will contact you to confirm availability, timing and any charges."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 1 hour(s), depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_059",
+    "slug": "emergency-breakdown-assistance-request",
+    "name": "Emergency Breakdown Assistance Request",
+    "category": "Additional Services",
+    "description": "Breakdown help request handled by staff or a partner. For emergencies involving injury, call local emergency services first.",
+    "icon": "plus",
+    "priceFrom": 1499,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 60,
+    "benefits": [
+      "Convenience",
+      "Single point of contact",
+      "Transparent confirmation"
+    ],
+    "inclusions": [
+      "Priority call-back",
+      "Partner towing coordination",
+      "Workshop intake"
+    ],
+    "exclusions": [
+      "Subject to availability and confirmation",
+      "Third-party charges where applicable"
+    ],
+    "vehicleTypes": [
+      "car",
+      "motorcycle",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "request",
+    "available": true,
+    "popular": false,
+    "faqs": [
+      {
+        "q": "Is my request confirmed immediately?",
+        "a": "No. This is a request. Our team or partner will contact you to confirm availability, timing and any charges."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 1 hour(s), depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_060",
+    "slug": "vehicle-accessory-installation",
+    "name": "Vehicle Accessory Installation",
+    "category": "Additional Services",
+    "description": "Installation of accessories such as cameras, lights, music systems and seat covers.",
+    "icon": "plus",
+    "priceFrom": 499,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 90,
+    "benefits": [
+      "Convenience",
+      "Single point of contact",
+      "Transparent confirmation"
+    ],
+    "inclusions": [
+      "Fitment consultation",
+      "Installation",
+      "Function test"
+    ],
+    "exclusions": [
+      "Subject to availability and confirmation",
+      "Third-party charges where applicable"
+    ],
+    "vehicleTypes": [
+      "car",
+      "motorcycle",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "inspection",
+    "available": true,
+    "popular": false,
+    "faqs": [
+      {
+        "q": "Why is a workshop inspection required?",
+        "a": "The final price depends on the condition of your vehicle. We inspect first, share an estimate and start work only after your approval."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 1.5 hour(s), depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_061",
+    "slug": "fleet-maintenance-enquiry",
+    "name": "Fleet Maintenance Enquiry",
+    "category": "Additional Services",
+    "description": "Enquire about maintenance plans for company or delivery fleets.",
+    "icon": "plus",
+    "priceFrom": 0,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 30,
+    "benefits": [
+      "Convenience",
+      "Single point of contact",
+      "Transparent confirmation"
+    ],
+    "inclusions": [
+      "Requirement discussion",
+      "Custom quotation",
+      "Scheduling plan"
+    ],
+    "exclusions": [
+      "Subject to availability and confirmation",
+      "Third-party charges where applicable"
+    ],
+    "vehicleTypes": [
+      "car",
+      "motorcycle",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "request",
+    "available": true,
+    "popular": false,
+    "faqs": [
+      {
+        "q": "Is my request confirmed immediately?",
+        "a": "No. This is a request. Our team or partner will contact you to confirm availability, timing and any charges."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 30 minutes, depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  },
+  {
+    "id": "svc_062",
+    "slug": "insurance-repair-enquiry",
+    "name": "Insurance Repair Enquiry",
+    "category": "Additional Services",
+    "description": "Get help with accident repairs and coordination with your insurer. Claim approval is decided by the insurer.",
+    "icon": "plus",
+    "priceFrom": 0,
+    "priceIsSampleEstimate": true,
+    "durationMinutes": 30,
+    "benefits": [
+      "Convenience",
+      "Single point of contact",
+      "Transparent confirmation"
+    ],
+    "inclusions": [
+      "Damage assessment",
+      "Estimate for insurer",
+      "Claim documentation help"
+    ],
+    "exclusions": [
+      "Subject to availability and confirmation",
+      "Third-party charges where applicable"
+    ],
+    "vehicleTypes": [
+      "car",
+      "motorcycle",
+      "suv",
+      "van",
+      "lcv"
+    ],
+    "bookingMode": "request",
+    "available": true,
+    "popular": false,
+    "faqs": [
+      {
+        "q": "Is my request confirmed immediately?",
+        "a": "No. This is a request. Our team or partner will contact you to confirm availability, timing and any charges."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "Typically around 30 minutes, depending on vehicle condition and workshop load."
+      }
+    ],
+    "createdAt": "2026-10-27T05:03:19.196Z",
+    "updatedAt": "2026-10-27T05:03:19.196Z"
+  }
+]

@@ -1,0 +1,73 @@
+[
+  {
+    "id": "tec_001",
+    "name": "Sample Technician - Engine",
+    "phone": "",
+    "email": "",
+    "specializations": [
+      "Engine",
+      "Diagnostics",
+      "Transmission"
+    ],
+    "workshopId": "ws_main",
+    "experienceYears": 8,
+    "active": true,
+    "userId": null,
+    "isSample": true,
+    "createdAt": "2026-10-27T05:03:19.195Z",
+    "updatedAt": "2026-10-27T05:03:19.195Z"
+  },
+  {
+    "id": "tec_002",
+    "name": "Sample Technician - Brakes & Tyres",
+    "phone": "",
+    "email": "",
+    "specializations": [
+      "Brakes",
+      "Tyres",
+      "Suspension"
+    ],
+    "workshopId": "ws_main",
+    "experienceYears": 5,
+    "active": true,
+    "userId": null,
+    "isSample": true,
+    "createdAt": "2026-10-27T05:03:19.195Z",
+    "updatedAt": "2026-10-27T05:03:19.195Z"
+  },
+  {
+    "id": "tec_003",
+    "name": "Sample Technician - Electrical & AC",
+    "phone": "",
+    "email": "",
+    "specializations": [
+      "Electrical",
+      "Battery",
+      "Air Conditioning"
+    ],
+    "workshopId": "ws_express",
+    "experienceYears": 6,
+    "active": true,
+    "userId": null,
+    "isSample": true,
+    "createdAt": "2026-10-27T05:03:19.195Z",
+    "updatedAt": "2026-10-27T05:03:19.195Z"
+  },
+  {
+    "id": "tec_004",
+    "name": "Sample Technician - Bodywork",
+    "phone": "",
+    "email": "",
+    "specializations": [
+      "Dent & Paint",
+      "Detailing"
+    ],
+    "workshopId": "ws_express",
+    "experienceYears": 4,
+    "active": true,
+    "userId": null,
+    "isSample": true,
+    "createdAt": "2026-10-27T05:03:19.195Z",
+    "updatedAt": "2026-10-27T05:03:19.195Z"
+  }
+]

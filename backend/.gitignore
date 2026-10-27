@@ -1,0 +1,7 @@
+node_modules/
+.env
+data/*.bak
+data/*.tmp
+data/*.corrupt-*
+coverage/
+*.log

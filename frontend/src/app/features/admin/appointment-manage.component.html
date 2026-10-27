@@ -1,0 +1,188 @@
+@if (loading()) {
+  <app-spinner />
+} @else if (error()) {
+  <div class="alert alert-danger">{{ error() }}</div>
+  <a [routerLink]="[basePath, 'appointments']" class="btn btn-outline mt-2">Back to list</a>
+} @else if (a()) {
+  <div class="page-header">
+    <div>
+      <a [routerLink]="[basePath, 'appointments']" class="small">← Appointments</a>
+      <h1 class="mono">{{ a().reference }}</h1>
+      <p>{{ a().date | day }} at {{ a().time }} · {{ a().workshopName }} · est. {{ a().estimatedDurationMinutes | duration }}</p>
+    </div>
+    <app-status-badge [status]="a().status" />
+  </div>
+
+  <!-- ACTIONS -->
+  <div class="card actions mb-3">
+    <div class="flex flex-wrap">
+      @for (t of transitions(); track t) {
+        <button type="button" class="btn" [class.btn-danger]="t === 'cancelled'" [class.btn-success]="t === 'completed'" [class.btn-primary]="t !== 'cancelled' && t !== 'completed'" [disabled]="busy()" (click)="changeStatus(t)">{{ actionLabel(t) }}</button>
+      } @empty {
+        <span class="muted small">No status changes available for your role at this stage.</span>
+      }
+      @if (isManager() && (a().status === 'pending' || a().status === 'confirmed')) {
+        <button type="button" class="btn btn-outline" [disabled]="busy()" (click)="openReschedule()"><app-icon name="calendar" [size]="16" /> Reschedule</button>
+      }
+      @if (a().serviceRecord?.invoiceNumber) {
+        <a class="btn btn-outline" [routerLink]="[basePath, 'invoices', a().serviceRecord?.id]"><app-icon name="file" [size]="16" /> Invoice {{ a().serviceRecord?.invoiceNumber }}</a>
+      }
+    </div>
+    @if (a().status === 'in_progress' && !record()?.labourItems?.length && !record()?.parts?.length) {
+      <p class="small muted mt-1 mb-0">Record labour and/or parts below before completing the service.</p>
+    }
+    @if (a().status === 'confirmed' && !a().technicianId && isManager()) { <p class="small text-danger mt-1 mb-0">Assign a technician before work can start.</p> }
+  </div>
+
+  <div class="grid cols">
+    <div class="stack">
+      <!-- CUSTOMER & VEHICLE -->
+      <div class="card">
+        <h3>Customer &amp; vehicle</h3>
+        <div class="grid grid-2">
+          <dl class="dl"><dt>Customer</dt><dd>{{ a().customerSnapshot.fullName }}</dd><dt>Phone</dt><dd><a [href]="'tel:' + a().customerSnapshot.phone">{{ a().customerSnapshot.phone }}</a></dd><dt>Email</dt><dd>{{ a().customerSnapshot.email }}</dd></dl>
+          <dl class="dl"><dt>Vehicle</dt><dd>{{ a().vehicleSnapshot.brand }} {{ a().vehicleSnapshot.model }} ({{ a().vehicleSnapshot.year }})</dd><dt>Reg. no.</dt><dd class="mono">{{ a().vehicleSnapshot.registrationNumber }}</dd><dt>Type / fuel</dt><dd>{{ a().vehicleSnapshot.type | vehicleType }} · {{ a().vehicleSnapshot.fuelType }}</dd><dt>Odometer</dt><dd>{{ a().vehicleSnapshot.odometer.toLocaleString('en-IN') }} km</dd></dl>
+        </div>
+        <hr class="divider" />
+        <dl class="dl">
+          <dt>Services</dt><dd>{{ serviceNames(a) }}</dd>
+          <dt>Estimate</dt><dd>{{ a().estimatedTotal | inr }} <span class="small muted">(incl. GST)</span></dd>
+          <dt>Problem</dt><dd>{{ a().problemCategory || 'Routine' }}@if (a().problemDescription) {<br /><span class="small">{{ a().problemDescription }}</span>}</dd>
+          <dt>Customer notes</dt><dd>{{ a().customerNotes || '—' }}</dd>
+          <dt>Pickup / drop</dt><dd>@if (a().pickup.pickupRequested || a().pickup.dropRequested) { {{ a().pickup.pickupRequested ? 'Pickup' : '' }} {{ a().pickup.dropRequested ? 'Drop-off' : '' }} · <b>{{ a().pickup.status }}</b><br /><span class="small">{{ a().pickup.address }} · {{ a().pickup.contactPhone }}</span> } @else { Not requested }</dd>
+          @if (a().cancellation) { <dt>Cancellation</dt><dd class="text-danger">{{ a().cancellation.reason }} <span class="small muted">({{ a().cancellation.byName }}, {{ a().cancellation.at | dateTime }})</span></dd> }
+        </dl>
+      </div>
+
+      <!-- WORK RECORD -->
+      @if (record(); as r) {
+        <form class="card" [formGroup]="work" (ngSubmit)="saveWork()">
+          <div class="card-title">
+            <h3>Work record @if (r.status === 'finalized') { <span class="badge badge-success">Finalized</span> } @else { <span class="badge badge-warning">Draft</span> }</h3>
+            @if (r.status !== 'finalized') { <button type="submit" class="btn btn-primary btn-sm" [disabled]="busy() || !work.dirty">{{ busy() ? 'Saving…' : 'Save work record' }}</button> }
+          </div>
+
+          <h4>Service checklist</h4>
+          <div formArrayName="checklist" class="check">
+            @for (c of checklist.controls; track $index; let i = $index) {
+              <label class="checkbox" [formGroupName]="i"><input type="checkbox" formControlName="done" /> {{ c.value.label }}</label>
+            }
+          </div>
+
+          <h4 class="mt-3">Labour</h4>
+          <div formArrayName="labourItems">
+            @for (l of labour.controls; track $index; let i = $index) {
+              <div class="line" [formGroupName]="i">
+                <input class="input" formControlName="description" placeholder="Labour description" aria-label="Labour description" />
+                <input class="input num" type="number" step="0.25" formControlName="hours" aria-label="Hours" title="Hours" />
+                <input class="input num" type="number" formControlName="rate" aria-label="Rate per hour" title="Rate / hour (₹)" />
+                <span class="amt">{{ (l.value.hours * l.value.rate) | inr }}</span>
+                @if (r.status !== 'finalized') { <button type="button" class="btn btn-ghost btn-icon" aria-label="Remove labour line" (click)="removeAt(labour, i)"><app-icon name="trash" [size]="16" /></button> }
+              </div>
+            }
+          </div>
+          @if (r.status !== 'finalized') { <button type="button" class="btn btn-outline btn-sm" (click)="addLabour()"><app-icon name="plus" [size]="14" /> Add labour</button> }
+
+          <h4 class="mt-3">Parts &amp; materials</h4>
+          <div formArrayName="parts">
+            @for (p of parts.controls; track $index; let i = $index) {
+              <div class="line parts" [formGroupName]="i">
+                <input class="input" formControlName="name" placeholder="Part name" aria-label="Part name" />
+                <input class="input" formControlName="partNumber" placeholder="Part no." aria-label="Part number" />
+                <input class="input num" type="number" step="0.01" formControlName="quantity" aria-label="Quantity" title="Quantity" />
+                <input class="input num" type="number" formControlName="unitPrice" aria-label="Unit price" title="Unit price (₹)" />
+                <span class="amt">{{ (p.value.quantity * p.value.unitPrice) | inr }}</span>
+                @if (r.status !== 'finalized') { <button type="button" class="btn btn-ghost btn-icon" aria-label="Remove part" (click)="removeAt(parts, i)"><app-icon name="trash" [size]="16" /></button> }
+              </div>
+            }
+          </div>
+          @if (r.status !== 'finalized') { <button type="button" class="btn btn-outline btn-sm" (click)="addPart()"><app-icon name="plus" [size]="14" /> Add part</button> }
+
+          <div class="form-grid mt-3">
+            @if (isManager()) {
+              <div class="field"><label for="w-dt">Discount</label>
+                <div class="flex"><select id="w-dt" class="select" formControlName="discountType" style="max-width:120px"><option value="flat">₹ flat</option><option value="percent">%</option></select><input class="input" type="number" formControlName="discountValue" min="0" aria-label="Discount value" /></div></div>
+              <div class="field"><label for="w-dr">Discount reason</label><input id="w-dr" class="input" formControlName="discountReason" /></div>
+            }
+            <div class="field"><label for="w-odo">Odometer at service (km)</label><input id="w-odo" class="input" type="number" formControlName="odometerAtService" /></div>
+            <div class="field"><label for="w-nsd">Next recommended service date</label><input id="w-nsd" class="input" type="date" formControlName="nextServiceDate" [min]="today" /></div>
+            <div class="field"><label for="w-nso">Next service at (km)</label><input id="w-nso" class="input" type="number" formControlName="nextServiceOdometer" /></div>
+            <div class="field full"><label for="w-notes">Technician notes (shown on invoice)</label><textarea id="w-notes" class="textarea" rows="3" formControlName="technicianNotes"></textarea></div>
+          </div>
+
+          @if (r.status === 'finalized') {
+            <div class="totals"><div><span>Subtotal</span><b>{{ r.subtotal | inr }}</b></div><div><span>Discount</span><b>− {{ r.discount.amount | inr }}</b></div><div><span>GST ({{ r.taxPercent }}%)</span><b>{{ r.taxAmount | inr }}</b></div><div class="grand"><span>Invoice total</span><b>{{ r.total | inr }}</b></div></div>
+          } @else {
+            @let p = preview();
+            <div class="totals"><div><span>Labour</span><b>{{ p.labour | inr }}</b></div><div><span>Parts</span><b>{{ p.parts | inr }}</b></div><div><span>Discount</span><b>− {{ p.discount | inr }}</b></div><div><span>GST ({{ gst() }}%)</span><b>{{ p.tax | inr }}</b></div><div class="grand"><span>Total (preview)</span><b>{{ p.total | inr }}</b></div></div>
+            <p class="small muted">Totals are recalculated by the server when you save.</p>
+          }
+        </form>
+      } @else if (inWork()) {
+        <div class="card"><app-spinner label="Loading work record…" /></div>
+      }
+    </div>
+
+    <div class="stack">
+      <!-- ASSIGNMENT -->
+      @if (isManager()) {
+        <form class="card" [formGroup]="assign" (ngSubmit)="saveAssignment()">
+          <h3>Assignment</h3>
+          <div class="stack">
+            <div class="field"><label for="as-adv">Service advisor</label><select id="as-adv" class="select" formControlName="advisorId"><option value="">Unassigned</option>@for (s of advisors(); track s.id) { <option [value]="s.id">{{ s.fullName }} ({{ s.role }})</option> }</select></div>
+            <div class="field"><label for="as-tech">Technician</label><select id="as-tech" class="select" formControlName="technicianId"><option value="">Unassigned</option>@for (t of technicians(); track t.id) { <option [value]="t.id">{{ t.name }} · {{ t.activeJobs }} active</option> }</select></div>
+            <div class="field"><label for="as-eta">Estimated completion</label><input id="as-eta" class="input" type="datetime-local" formControlName="estimatedCompletionAt" /></div>
+            @if (a().pickup.pickupRequested || a().pickup.dropRequested) {
+              <div class="field"><label for="as-pick">Pickup / drop-off request</label><select id="as-pick" class="select" formControlName="pickupStatus"><option value="requested">Requested</option><option value="approved">Approved</option><option value="declined">Declined</option></select></div>
+            }
+            <button type="submit" class="btn btn-primary" [disabled]="busy() || assign.pristine || a().status === 'completed' || a().status === 'cancelled'">Save assignment</button>
+          </div>
+        </form>
+      } @else {
+        <div class="card"><h3>Assignment</h3><dl class="dl"><dt>Advisor</dt><dd>{{ a().advisorName || '—' }}</dd><dt>Technician</dt><dd>{{ a().technicianName || '—' }}</dd><dt>ETA</dt><dd>{{ a().estimatedCompletionAt ? (a().estimatedCompletionAt | dateTime) : '—' }}</dd></dl></div>
+      }
+
+      <!-- INTERNAL NOTES -->
+      <div class="card">
+        <h3>Internal staff notes</h3>
+        <p class="small muted">Visible to staff only.</p>
+        @for (n of a().internalNotes ?? []; track n.id) {
+          <div class="note"><p class="mb-0 small">{{ n.note }}</p><span class="small muted">{{ n.byName }} ({{ n.byRole }}) · {{ n.at | dateTime }}</span></div>
+        } @empty { <p class="small muted">No notes yet.</p> }
+        <textarea class="textarea mt-1" rows="2" [(ngModel)]="internalNote" [ngModelOptions]="{ standalone: true }" maxlength="1000" placeholder="Add a note for the team" aria-label="Internal note"></textarea>
+        <button type="button" class="btn btn-outline btn-sm mt-1" [disabled]="!internalNote.trim()" (click)="addNote()">Add note</button>
+      </div>
+
+      <!-- HISTORY -->
+      <div class="card">
+        <h3>Status history</h3>
+        <ul class="timeline">
+          @for (h of historyDesc(); track $index) {
+            <li><b>{{ h.status | statusLabel }}</b> <span class="small muted">· {{ h.at | dateTime }}</span><div class="small muted">{{ h.byName }} ({{ h.byRole }})@if (h.note) { - {{ h.note }} }</div></li>
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <app-modal [open]="rescheduleOpen()" title="Reschedule appointment" (closed)="rescheduleOpen.set(false)">
+    <form [formGroup]="rs" (ngSubmit)="submitReschedule()">
+      <div class="form-grid">
+        <div class="field"><label for="mr-ws">Workshop</label><select id="mr-ws" class="select" formControlName="workshopId" (change)="loadSlots()">@for (w of workshops(); track w.id) { <option [value]="w.id">{{ w.name }}</option> }</select></div>
+        <div class="field"><label for="mr-d">Date</label><input id="mr-d" class="input" type="date" formControlName="date" [min]="today" [max]="maxDate" (change)="loadSlots()" /></div>
+      </div>
+      @if (slots(); as av) {
+        @if (av.closed) { <div class="alert alert-warning mt-2">{{ av.reason }}</div> }
+        @else {
+          <div class="slots mt-2">
+            @for (s of av.slots; track s.time) {
+              <button type="button" class="btn btn-sm" [class.btn-primary]="rs.controls.time.value === s.time" [class.btn-outline]="rs.controls.time.value !== s.time" [disabled]="!s.available" (click)="rs.controls.time.setValue(s.time)">{{ s.time }}</button>
+            }
+          </div>
+        }
+      }
+      <div class="field mt-2"><label for="mr-r">Reason (sent to customer)</label><input id="mr-r" class="input" formControlName="reason" maxlength="300" /></div>
+      <div class="form-actions"><button type="button" class="btn btn-outline" (click)="rescheduleOpen.set(false)">Close</button><button type="submit" class="btn btn-primary" [disabled]="rs.invalid || busy()">Reschedule</button></div>
+    </form>
+  </app-modal>
+}

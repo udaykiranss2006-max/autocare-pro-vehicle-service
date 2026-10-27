@@ -1,0 +1,27 @@
+{
+  "name": "autocare-pro-backend",
+  "version": "1.0.0",
+  "description": "AutoCare Pro - Vehicle Service Management System (Express + JSON file storage)",
+  "main": "src/server.js",
+  "private": true,
+  "engines": { "node": ">=20.11" },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "seed": "node scripts/seed.js",
+    "seed:reset": "node scripts/seed.js --reset",
+    "test": "node --test tests/unit.test.js tests/api.test.js",
+    "test:unit": "node --test tests/unit.test.js",
+    "test:api": "node --test tests/api.test.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2"
+  }
+}

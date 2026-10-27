@@ -1,0 +1,15 @@
+.cols { grid-template-columns: 1.6fr 1fr; align-items: start; }
+.actions { border-left: 4px solid var(--accent); }
+h4 { font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin-bottom: 8px; }
+.check { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 8px; }
+.line { display: grid; grid-template-columns: 1fr 90px 110px 110px 40px; gap: 8px; align-items: center; margin-bottom: 8px; }
+.line.parts { grid-template-columns: 1fr 120px 80px 110px 110px 40px; }
+.num { text-align: right; }
+.amt { text-align: right; font-weight: 600; font-size: .9rem; }
+.totals { margin: 16px 0 0 auto; max-width: 320px; display: flex; flex-direction: column; gap: 4px; font-size: .92rem; }
+.totals div { display: flex; justify-content: space-between; }
+.grand { border-top: 2px solid var(--navy-800); padding-top: 6px; font-size: 1.05rem; }
+.note { padding: 8px 0; border-bottom: 1px solid var(--border); }
+.slots { display: flex; flex-wrap: wrap; gap: 6px; }
+@media (max-width: 1100px) { .cols { grid-template-columns: 1fr; } }
+@media (max-width: 720px) { .line, .line.parts { grid-template-columns: 1fr 1fr; } .line .input:first-child { grid-column: 1 / -1; } }
